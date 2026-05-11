@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laptop Buying Guide — MIS Graduate &amp; PC Gamer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:   #0C447C;
+  --blue:   #185FA5;
+  --lblue:  #E6F1FB;
+  --blue2:  #B5D4F4;
+  --purple: #534AB7;
+  --lpurp:  #EEEDFE;
+  --teal:   #0F6E56;
+  --lteal:  #E1F5EE;
+  --amber:  #854F0B;
+  --lamber: #FAEEDA;
+  --red:    #993C1D;
+  --lred:   #FAECE7;
+  --gray:   #5F5E5A;
+  --lgray:  #D3D1C7;
+  --bg:     #F7F5F0;
+  --bg2:    #EFEDE8;
+  --white:  #FFFFFF;
+  --text:   #1A1A18;
+  --muted:  #5F5E5A;
+  --border: #C8C6BD;
+  --r:      8px;
+  --rl:     14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+
+/* HERO */
+.hero{background:var(--navy);color:#fff;padding:64px 32px 52px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(24,95,165,.35),transparent 70%);pointer-events:none}
+.hero-inner{max-width:860px;margin:0 auto;position:relative}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:14px}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(30px,5vw,50px);line-height:1.1;color:#fff;margin-bottom:14px}
+.hero h1 em{color:var(--blue2);font-style:italic}
+.hero-desc{font-size:15px;color:rgba(255,255,255,.72);max-width:580px;line-height:1.6;margin-bottom:24px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:7px}
+.hero-tag{font-size:11px;padding:4px 11px;border-radius:99px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);background:rgba(255,255,255,.07)}
+
+/* LAYOUT */
+.main{max-width:900px;margin:0 auto;padding:44px 20px 72px}
+
+/* SECTION */
+.section{margin-bottom:52px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--navy)}
+.sec-num{font-family:'DM Serif Display',serif;font-size:13px;color:#fff;background:var(--navy);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-header h2{font-family:'DM Serif Display',serif;font-size:21px;color:var(--navy);font-weight:400}
+h3{font-size:14px;font-weight:500;color:var(--blue);margin:18px 0 7px}
+h4{font-size:11px;font-weight:500;color:var(--purple);margin:12px 0 5px;text-transform:uppercase;letter-spacing:.07em}
+p{margin-bottom:9px;color:var(--text)}
+
+/* BUNDLE METRICS */
+.bundle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:14px 0}
+@media(max-width:620px){.bundle-grid{grid-template-columns:1fr 1fr}}
+.metric{background:var(--lblue);border:1px solid var(--blue2);border-radius:var(--rl);padding:14px}
+.metric.total{background:var(--navy);border-color:var(--navy)}
+.m-lbl{font-size:11px;color:var(--blue);margin-bottom:3px;font-weight:500}
+.metric.total .m-lbl{color:var(--blue2)}
+.m-val{font-family:'DM Serif Display',serif;font-size:24px;color:var(--navy);line-height:1.1}
+.metric.total .m-val{color:#fff}
+.m-sub{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4}
+.metric.total .m-sub{color:rgba(255,255,255,.6)}
+
+/* NOTICES */
+.notice{border-radius:var(--r);padding:10px 14px;font-size:13px;line-height:1.5;margin:8px 0;display:flex;gap:9px;align-items:flex-start}
+.ni{font-size:14px;flex-shrink:0;margin-top:1px}
+.n-teal{background:var(--lteal);color:var(--teal);border-left:3px solid var(--teal)}
+.n-amber{background:var(--lamber);color:var(--amber);border-left:3px solid var(--amber)}
+.n-red{background:var(--lred);color:var(--red);border-left:3px solid var(--red)}
+.n-blue{background:var(--lblue);color:var(--blue);border-left:3px solid var(--blue)}
+.n-purple{background:var(--lpurp);color:var(--purple);border-left:3px solid var(--purple)}
+
+/* LAPTOP CARDS */
+.laptop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+@media(max-width:680px){.laptop-grid{grid-template-columns:1fr}}
+.lcard{background:var(--white);border:1px solid var(--border);border-radius:var(--rl);padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.04)}
+.lcard.current{background:var(--bg2)}
+.lcard.rec{border:2px solid var(--blue);background:#FAFCFF}
+.badge{display:inline-block;font-size:10px;font-weight:500;padding:3px 10px;border-radius:99px;margin-bottom:7px;letter-spacing:.04em}
+.b-gray{background:var(--lgray);color:var(--gray)}
+.b-purple{background:var(--lpurp);color:var(--purple)}
+.b-blue{background:var(--lblue);color:var(--blue)}
+.cname{font-family:'DM Serif Display',serif;font-size:15px;color:var(--navy);margin-bottom:2px;line-height:1.3}
+.csub{font-size:11px;color:var(--muted);margin-bottom:8px}
+.cprice{font-size:18px;font-weight:500;color:var(--text);margin-bottom:2px}
+.cprice-eff{font-size:12px;color:var(--teal);font-weight:500;margin-bottom:1px}
+.cprice-sub{font-size:11px;color:var(--muted);margin-bottom:10px}
+.ob-box{background:var(--lteal);border-radius:var(--r);padding:8px 10px;font-size:11px;color:var(--teal);margin-bottom:10px;line-height:1.5}
+.warn-box{background:var(--lamber);border-radius:var(--r);padding:8px 10px;font-size:11px;color:var(--amber);margin-bottom:10px;line-height:1.5}
+
+/* SPEC ROWS */
+.spec-lbl{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:11px 0 4px}
+.sr{display:flex;justify-content:space-between;align-items:flex-start;padding:3px 0;border-bottom:.5px solid var(--lgray);font-size:11px;gap:5px}
+.sr:last-of-type{border-bottom:none}
+.sl{color:var(--muted);flex-shrink:0;min-width:68px}
+.sv{font-weight:500;text-align:right;color:var(--text)}
+.sv.g{color:var(--teal)}.sv.r{color:var(--red)}.sv.a{color:var(--amber)}
+
+/* PRO/CON */
+.pcl{list-style:none;margin:3px 0 8px}
+.pcl li{display:flex;align-items:flex-start;gap:6px;font-size:11.5px;line-height:1.4;margin-bottom:3px;color:var(--text)}
+.ico{flex-shrink:0;font-size:12px;margin-top:1px;font-style:normal}
+.ico.p{color:var(--teal)}.ico.c{color:var(--red)}.ico.w{color:var(--amber)}
+
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.tag{font-size:10px;padding:3px 9px;border-radius:99px;font-weight:500}
+.tg{background:var(--lteal);color:var(--teal)}
+.tr{background:var(--lred);color:var(--red)}
+.ta{background:var(--lamber);color:var(--amber)}
+.tp{background:var(--lpurp);color:var(--purple)}
+.tb{background:var(--lblue);color:var(--blue)}
+
+/* TABLES */
+.tw{overflow-x:auto;margin:14px 0;border-radius:var(--rl);box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.04)}
+table{width:100%;border-collapse:collapse;font-size:12px;background:var(--white)}
+thead th{background:var(--navy);color:#fff;font-weight:500;padding:9px 11px;text-align:left;white-space:nowrap}
+thead th:first-child{border-radius:var(--rl) 0 0 0}
+thead th:last-child{border-radius:0 var(--rl) 0 0}
+tbody tr:nth-child(even){background:var(--bg)}
+tbody td{padding:8px 11px;border-bottom:.5px solid var(--lgray);vertical-align:top;line-height:1.45;color:var(--text)}
+tbody tr:last-child td{border-bottom:none}
+tbody td:first-child{color:var(--muted);font-weight:500;font-size:11.5px}
+td.rc{background:#EBF4FD!important}
+td.gd{color:var(--teal);font-weight:500}
+td.bd{color:var(--red)}
+td.ok{color:var(--amber)}
+
+/* RATING BARS */
+.ratings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:640px){.ratings-grid{grid-template-columns:1fr}}
+.rb{display:flex;align-items:center;gap:9px;margin:4px 0;font-size:11.5px}
+.rb-lbl{flex:0 0 148px;color:var(--muted);font-size:11px}
+.rb-track{flex:1;height:5px;background:var(--lgray);border-radius:99px;overflow:hidden}
+.rb-fill{height:100%;border-radius:99px}
+.rb-score{flex:0 0 38px;text-align:right;font-weight:500;font-size:11px}
+
+/* VERDICT */
+.verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+@media(max-width:580px){.verdict-grid{grid-template-columns:1fr}}
+.vbox{background:var(--bg2);border-radius:var(--rl);padding:18px;font-size:13px;line-height:1.65}
+.vbox.rec{border-left:4px solid var(--blue);background:#EFF6FE;border-radius:0 var(--rl) var(--rl) 0}
+.vbox h3{margin-top:0;margin-bottom:8px}
+
+/* TWO-COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;font-size:12px;padding:22px;line-height:1.6}
+footer a{color:var(--blue2);text-decoration:none}
+
+/* ANIMATION */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hero-inner>*{animation:fadeUp .5s ease both}
+.hero-inner>*:nth-child(2){animation-delay:.06s}
+.hero-inner>*:nth-child(3){animation-delay:.12s}
+.hero-inner>*:nth-child(4){animation-delay:.18s}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Laptop Buying Guide · 2025–2026</div>
+    <h1>Your next laptop,<br><em>finally decided.</em></h1>
+    <p class="hero-desc">A complete three-way comparison for an MIS graduate and PC gamer with a Steam Deck LCD — including Microsoft Ultimate College Bundle savings, upgradability, and a definitive verdict.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">HP Notebook 14 (2020) — Current</span>
+      <span class="hero-tag">ASUS Zenbook A14 — Option A</span>
+      <span class="hero-tag">HP OmniBook X Flip — Recommended</span>
+      <span class="hero-tag">MIS Career Ready</span>
+      <span class="hero-tag">Steam Deck LCD Owner</span>
+      <span class="hero-tag">Microsoft Bundle $639.86 Value</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<!-- 1. BUNDLE -->
+<section class="section">
+  <div class="section-header"><div class="sec-num">1</div><h2>Microsoft Ultimate College Bundle</h2></div>
+  <p>Eligible U.S. college students who purchase a qualifying new Windows 11 PC before <strong>June 30, 2026</strong> receive the following free. Redemption deadline is July 31, 2026 and requires a valid <code>.edu</code> email. Only for <em>new</em> Microsoft 365 and <em>new</em> Xbox Game Pass subscribers.</p>
+  <div class="bundle-grid">
+    <div class="metric"><div class="m-lbl">Microsoft 365 Premium</div><div class="m-val">$199.99</div><div class="m-sub">1 year · Word, Excel, PowerPoint + Copilot AI</div></div>
+    <div class="metric"><div class="m-lbl">Xbox Game Pass Ultimate</div><div class="m-val">$359.88</div><div class="m-sub">1 year · $29.99/mo · 500+ games + PC Game Pass</div></div>
+    <div class="metric"><div class="m-lbl">Xbox Design Lab Controller</div><div class="m-val">$79.99</div><div class="m-sub">Custom colors · works with PC and Steam Deck</div></div>
+    <div class="metric total"><div class="m-lbl">Total bundle value</div><div class="m-val">$639.86</div><div class="m-sub">Free with qualifying new Windows 11 PC</div></div>
+  </div>
+  <div class="notice n-teal"><span class="ni">✓</span><span>If you are a new subscriber to both services, you receive the full <strong>$639.86</strong> in value free with your laptop purchase.</span></div>
+  <div class="notice n-amber"><span class="ni">!</span><span>Only for <strong>new</strong> Game Pass and <strong>new</strong> Microsoft 365 subscribers — existing subscribers get no value from those portions.</span></div>
+  <div class="notice n-amber"><span class="ni">!</span><span>Many colleges include Microsoft 365 through tuition — check before assuming you save the full $199.99.</span></div>
+  <div class="notice n-amber"><span class="ni">!</span><span>The open box HP must register as a new Windows PC to qualify — confirm with Best Buy before purchasing.</span></div>
+  <div class="notice n-purple"><span class="ni">🎮</span><span>As a <strong>Steam Deck LCD owner</strong>: the Xbox Design Lab controller works for PC gaming on the HP OmniBook and also pairs via Bluetooth or USB with your Steam Deck when docked.</span></div>
+  <div class="notice n-red"><span class="ni">✗</span><span><strong>Game Pass on the Zenbook A14:</strong> Windows on ARM + weak Adreno GPU = most Game Pass titles won't run. The $359.88 Game Pass value is largely wasted on that machine.</span></div>
+</section>
+
+<!-- 2. SPEC COMPARISON -->
+<section class="section">
+  <div class="section-header"><div class="sec-num">2</div><h2>Spec Comparison — All Three Laptops</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Specification</th><th>Your HP (2020)</th><th>ASUS Zenbook A14</th><th>HP OmniBook X Flip ★</th></tr></thead>
+      <tbody>
+        <tr><td>Price</td><td>$529 (paid off)<br>No bundle eligible</td><td>~$799–$999 new<br>~$159–$359 after bundle</td><td class="rc gd"><strong>~$520–$698 open box<br>~$0–$58 after bundle</strong></td></tr>
+        <tr><td>CPU</td><td class="bd">Core i3-1005G1 · 2-core · 3.4 GHz max</td><td class="gd">Snapdragon X Plus · 8-core · 3.2 GHz</td><td class="rc gd">Core Ultra 5 226V · 8-core · 4.5 GHz</td></tr>
+        <tr><td>RAM</td><td class="bd">8 GB DDR4 (soldered — cannot upgrade)</td><td>16 GB LPDDR5 (soldered)</td><td class="rc">16 GB LPDDR5 (soldered)</td></tr>
+        <tr><td>Storage</td><td class="bd">256 GB PCIe SSD (likely nearly full)</td><td class="gd">512 GB NVMe SSD (user-replaceable)</td><td class="rc gd">512 GB NVMe SSD (user-replaceable)</td></tr>
+        <tr><td>Display</td><td class="bd">14" IPS 1080p · 60 Hz · no touch</td><td class="gd">14" OLED 1920×1200 · 60 Hz · no touch</td><td class="rc ok">14" IPS 1920×1200 · 60 Hz · touchscreen · 4 modes</td></tr>
+        <tr><td>GPU</td><td class="bd">Intel UHD (basic) — cannot game</td><td class="bd">Qualcomm Adreno (very weak)</td><td class="rc gd">Intel Arc 130V (8 GB) — light-medium gaming</td></tr>
+        <tr><td>Weight</td><td>~3.75 lbs</td><td class="gd">~2.18 lbs (sub-1 kg)</td><td class="rc ok">~3.3 lbs</td></tr>
+        <tr><td>Battery</td><td class="bd">~41 Wh · now ~3–5 hrs (degraded)</td><td class="gd">70 Wh · 12–20 hrs real-world</td><td class="rc gd">68 Wh · 10–12 hrs real-world</td></tr>
+        <tr><td>Wi-Fi</td><td class="bd">Wi-Fi 5 · BT 5.0</td><td class="gd">Wi-Fi 6E · BT 5.3</td><td class="rc gd">Wi-Fi 6E · BT 5.3</td></tr>
+        <tr><td>Thunderbolt</td><td class="bd">No</td><td class="ok">No (USB4 ×2)</td><td class="rc gd">Thunderbolt 4 + USB-C + USB-A ×2 + HDMI 2.1</td></tr>
+        <tr><td>Touchscreen</td><td class="bd">No</td><td class="bd">No</td><td class="rc gd">Yes — laptop / tent / tablet / reverse</td></tr>
+        <tr><td>OS</td><td>Windows 11 (x86)</td><td class="ok">Windows 11 on ARM</td><td class="rc gd">Windows 11 (x86 — full compatibility)</td></tr>
+        <tr><td>PC Gaming</td><td class="bd">Not capable</td><td class="bd">Not viable (ARM + weak GPU)</td><td class="rc gd">Light–medium titles · full Game Pass library</td></tr>
+        <tr><td>Webcam</td><td class="bd">720p basic</td><td>1080p + IR (Windows Hello)</td><td class="rc gd">5MP + IR (Windows Hello)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:11.5px;color:var(--muted);">★ HP OmniBook X Flip 14 · Model: 14-fm0013dx · SKU: 6613868 · Open Box Excellent · Comp. value: $849.99</p>
+</section>
+
+<!-- 3. PROS AND CONS -->
+<section class="section">
+  <div class="section-header"><div class="sec-num">3</div><h2>Pros &amp; Cons — Detailed Breakdown</h2></div>
+  <div class="laptop-grid">
+
+    <div class="lcard current">
+      <span class="badge b-gray">Your current laptop</span>
+      <div class="cname">HP Notebook 14-dq1043cl</div>
+      <div class="csub">2020 · Intel Core i3 · Product #1V782UA</div>
+      <div class="cprice">$529</div>
+      <div class="cprice-sub">Fully paid off · no bundle eligible</div>
+      <h4>Pros</h4>
+      <ul class="pcl">
+        <li><em class="ico p">+</em>Already fully paid off — $0 additional cost</li>
+        <li><em class="ico p">+</em>SD card slot for quick file transfers</li>
+        <li><em class="ico p">+</em>Runs all standard x86 Windows apps</li>
+      </ul>
+      <h4>Cons</h4>
+      <ul class="pcl">
+        <li><em class="ico c">✗</em>2-core CPU bottlenecks with SQL + browser + Zoom open simultaneously</li>
+        <li><em class="ico c">✗</em>8 GB RAM — insufficient for modern MIS workloads</li>
+        <li><em class="ico c">✗</em>256 GB SSD likely nearly full after 5 years</li>
+        <li><em class="ico c">✗</em>Battery degraded — probably 3–5 hrs real-world now</li>
+        <li><em class="ico c">✗</em>No Thunderbolt 4 or modern docking support</li>
+        <li><em class="ico c">✗</em>Wi-Fi 5 — slower on modern networks</li>
+        <li><em class="ico c">✗</em>Cannot run PC games or Game Pass titles at all</li>
+        <li><em class="ico c">✗</em>Will feel embarrassingly slow in a professional MIS environment</li>
+        <li><em class="ico c">✗</em>Not eligible for the Microsoft bundle</li>
+      </ul>
+      <div class="tags"><span class="tag tr">No gaming</span><span class="tag tr">No bundle</span><span class="tag tr">Too slow for MIS</span></div>
+    </div>
+
+    <div class="lcard">
+      <span class="badge b-purple">Option A</span>
+      <div class="cname">ASUS Zenbook A14</div>
+      <div class="csub">Snapdragon X Plus · Zabriskie Beige · 2025</div>
+      <div class="cprice">~$799–$999</div>
+      <div class="cprice-eff">~$159–$359 after bundle</div>
+      <div class="cprice-sub">If new to both Game Pass + 365</div>
+      <div class="warn-box"><strong>⚠ Steam Deck + gamer alert:</strong> Windows on ARM + very weak Adreno GPU = most PC games and Game Pass titles won't run. The $360 Game Pass bundle value is largely wasted here.</div>
+      <h4>Pros</h4>
+      <ul class="pcl">
+        <li><em class="ico p">+</em>Featherlight at under 1 kg — barely notice it in a bag</li>
+        <li><em class="ico p">+</em>Exceptional battery life (12–20 hrs) — rarely need a charger</li>
+        <li><em class="ico p">+</em>Stunning OLED display — vivid colors, deep blacks</li>
+        <li><em class="ico p">+</em>Premium Ceraluminum chassis · iF Design Award 2025</li>
+        <li><em class="ico p">+</em>Handles Office, Zoom, SQL tools, browser comfortably</li>
+        <li><em class="ico p">+</em>SSD and Wi-Fi card are user-replaceable</li>
+      </ul>
+      <h4>Cons</h4>
+      <ul class="pcl">
+        <li><em class="ico c">✗</em>Windows on ARM — SAP, Oracle, many VPNs and IT tools may not work</li>
+        <li><em class="ico c">✗</em>No touchscreen</li>
+        <li><em class="ico c">✗</em>Adreno GPU cannot run PC games or Game Pass effectively</li>
+        <li><em class="ico c">✗</em>$360 Game Pass bundle value mostly wasted</li>
+        <li><em class="ico c">✗</em>No Thunderbolt 4 — docking station support uncertain</li>
+        <li><em class="ico c">✗</em>60 Hz only · glossy screen has reflections outdoors</li>
+      </ul>
+      <div class="tags"><span class="tag ta">Verify at arm64.app</span><span class="tag tr">Game Pass mostly wasted</span><span class="tag tg">Deck handles gaming</span></div>
+    </div>
+
+    <div class="lcard rec">
+      <span class="badge b-blue">★ Recommended</span>
+      <div class="cname">HP OmniBook X Flip 14</div>
+      <div class="csub">Core Ultra 5 226V · Open Box Excellent · SKU 6613868</div>
+      <div class="cprice">~$520–$698</div>
+      <div class="cprice-eff">~$0–$58 after bundle</div>
+      <div class="cprice-sub">Near-free if new to both Game Pass + 365</div>
+      <div class="ob-box"><strong>Open Box Excellent:</strong> Geek Squad verified · factory reset · may have very minor cosmetic marks · same return policy as new · HP warranty included. Comp. value: $849.99.</div>
+      <h4>Pros</h4>
+      <ul class="pcl">
+        <li><em class="ico p">+</em>Standard x86 Windows — SAP, Oracle, SQL Server, Tableau, all VPNs work with zero asterisks</li>
+        <li><em class="ico p">+</em>Intel Arc 130V GPU — Game Pass titles and lighter Steam games run natively</li>
+        <li><em class="ico p">+</em>Touchscreen + 4-mode flip — laptop, tablet, tent, reverse</li>
+        <li><em class="ico p">+</em>Thunderbolt 4 — any office docking station on day one at a new job</li>
+        <li><em class="ico p">+</em>2 USB-A + Thunderbolt 4 + USB-C + HDMI — rarely need a dongle</li>
+        <li><em class="ico p">+</em>5MP webcam — far better for video calls than your current HP</li>
+        <li><em class="ico p">+</em>Full $639.86 bundle value is actually redeemable</li>
+        <li><em class="ico p">+</em>SSD is user-replaceable when you need more space</li>
+      </ul>
+      <h4>Cons</h4>
+      <ul class="pcl">
+        <li><em class="ico c">✗</em>Heavier than the Zenbook by over 1 lb</li>
+        <li><em class="ico c">✗</em>IPS display — good but not as vivid as OLED</li>
+        <li><em class="ico c">✗</em>Trackpad is mushy — most common review complaint</li>
+        <li><em class="ico c">✗</em>Some keyboard flex under heavy typing</li>
+        <li><em class="ico c">✗</em>Not a gaming laptop — AAA titles need low settings</li>
+      </ul>
+      <div class="tags"><span class="tag tg">All MIS apps work</span><span class="tag tg">Game Pass redeemable</span><span class="tag tg">Thunderbolt 4</span><span class="tag tg">Best value</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 4. MIS USABILITY -->
+<section class="section">
+  <div class="section-header"><div class="sec-num">4</div><h2>Usability — MIS Degree, In and After College</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Scenario</th><th>Your HP (2020)</th><th>ASUS Zenbook A14</th><th>HP OmniBook X Flip ★</th></tr></thead>
+      <tbody>
+        <tr><td>SQL databases (SQL Server, MySQL)</td><td class="bd">Too slow — lags badly with browser open</td><td class="ok">Runs fine if ARM-compatible clients</td><td class="rc gd">All SQL tools work flawlessly — x86 native</td></tr>
+        <tr><td>Excel + Power BI + browser + Zoom</td><td class="bd">Struggles — 8 GB RAM, 2-core CPU</td><td class="ok">Handles well; Office runs natively on ARM</td><td class="rc gd">Handles well; Power BI Desktop is x86 native</td></tr>
+        <tr><td>SAP / Oracle ERP (enterprise)</td><td class="bd">Too slow, barely runs</td><td class="bd">High risk — many ERP clients not ARM-ready</td><td class="rc gd">Works — every enterprise tool runs on x86 Windows</td></tr>
+        <tr><td>Company VPN + IT tools (first job)</td><td class="bd">Underpowered</td><td class="bd">May not work — ARM incompatibility risk</td><td class="rc gd">Works — standard x86, no compatibility issues</td></tr>
+        <tr><td>Office docking station at work</td><td class="bd">USB-C only, limited</td><td class="ok">USB4 works but not Thunderbolt 4</td><td class="rc gd">Thunderbolt 4 — works with any office dock</td></tr>
+        <tr><td>Presentations to clients</td><td>OK for basic slides</td><td class="ok">OLED is stunning; no flip/tablet mode</td><td class="rc gd">Touch + tent mode; flip to present easily</td></tr>
+        <tr><td>Annotating requirements docs / whiteboarding</td><td class="bd">No touchscreen</td><td class="bd">No touchscreen</td><td class="rc gd">Touchscreen + stylus support — great for this</td></tr>
+        <tr><td>Travel-heavy consulting / BA role</td><td class="bd">Battery dies by noon</td><td class="gd">Best-in-class battery; ultralight for travel</td><td class="rc ok">Good battery; slightly heavier but portable</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 5. GAMING + STEAM DECK -->
+<section class="section">
+  <div class="section-header"><div class="sec-num">5</div><h2>PC Gaming &amp; Steam Deck LCD Perspective</h2></div>
+  <p>Your Steam Deck LCD already handles serious gaming. The question is how well each laptop <em>complements</em> it — and whether the free Xbox Game Pass Ultimate subscription will actually be useful.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Gaming Scenario</th><th>Your HP (2020)</th><th>ASUS Zenbook A14</th><th>HP OmniBook X Flip ★</th></tr></thead>
+      <tbody>
+        <tr><td>PC Game Pass library</td><td class="bd">Cannot run</td><td class="bd">ARM compat. issues; weak GPU</td><td class="rc gd">Intel Arc 130V runs these natively on x86</td></tr>
+        <tr><td>Lighter Steam games (indie, older titles)</td><td class="bd">Cannot run</td><td class="bd">ARM issues; many won't launch</td><td class="rc ok">Runs many at low–medium settings fine</td></tr>
+        <tr><td>AAA / demanding games</td><td class="bd">Cannot run</td><td class="bd">Not viable</td><td class="ok">Not recommended — use Steam Deck for these</td></tr>
+        <tr><td>Cloud gaming via Game Pass</td><td class="bd">Too slow</td><td class="ok">Browser works; GPU limits quality</td><td class="rc gd">Works well; full performance</td></tr>
+        <tr><td>Xbox controller from bundle</td><td>Basic use only</td><td class="bd">Mostly wasted — games don't run</td><td class="rc gd">Fully useful for PC gaming + Steam Deck dock use</td></tr>
+        <tr><td>Best gaming setup for you</td><td>Steam Deck only</td><td>Steam Deck only (laptop adds nothing)</td><td class="rc gd">Deck for demanding; HP for lighter PC + Game Pass</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notice n-purple"><span class="ni">🎮</span><span><strong>Steam Deck LCD tip:</strong> Game Pass Ultimate includes cloud gaming, which works in the Steam Deck's browser. The HP OmniBook extends this natively through Intel Arc, letting you play Game Pass titles on a big screen at home. Your Deck handles portable gaming; the HP handles desk gaming.</span></div>
+</section>
+
+<!-- 6. COST BREAKDOWN -->
+<section class="section">
+  <div class="section-header"><div class="sec-num">6</div><h2>Real Cost Breakdown — After Bundle</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Cost Item</th><th>Keep Current HP</th><th>ASUS Zenbook A14</th><th>HP OmniBook X Flip ★</th></tr></thead>
+      <tbody>
+        <tr><td>Laptop purchase price</td><td>$0 (already paid)</td><td>~$799–$999</td><td class="rc">~$520–$698 (open box)</td></tr>
+        <tr><td>Microsoft 365 Premium (1 yr)</td><td class="bd">–$199.99/yr ongoing</td><td class="gd">Free (saves $199.99)</td><td class="rc gd">Free (saves $199.99)</td></tr>
+        <tr><td>Xbox Game Pass Ultimate (1 yr)</td><td class="bd">–$359.88/yr ongoing</td><td class="ok">Free but mostly wasted on ARM</td><td class="rc gd">Free &amp; fully usable (saves $359.88)</td></tr>
+        <tr><td>Xbox Design Lab Controller</td><td class="bd">–$79.99 if you want it</td><td class="gd">Free ($79.99 value)</td><td class="rc gd">Free ($79.99 value)</td></tr>
+        <tr><td>Total bundle savings</td><td class="bd">None</td><td class="ok">~$639.86 (partially wasted)</td><td class="rc gd">~$639.86 (fully redeemable)</td></tr>
+        <tr><td><strong>Effective net cost</strong></td><td class="bd">$0 now + ~$560/yr in subs</td><td>~$159–$359</td><td class="rc gd"><strong>~$0–$58</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notice n-teal"><span class="ni">✓</span><span>The HP OmniBook X Flip Open Box + Microsoft Ultimate College Bundle is the single best-value laptop deal for a graduating college student who is also a PC gamer and new to these subscriptions.</span></div>
+</section>
+
+<!-- 7. UPGRADABILITY -->
+<section class="section">
+  <div class="section-header"><div class="sec-num">7</div><h2>Upgradability</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Component</th><th>Your HP (2020)</th><th>ASUS Zenbook A14</th><th>HP OmniBook X Flip ★</th></tr></thead>
+      <tbody>
+        <tr><td>SSD</td><td class="bd">M.2 slot technically exists but HP marks it not user-accessible. Do not attempt on a 5-year-old machine.</td><td class="gd">User-replaceable M.2 NVMe slot. Medium difficulty — unscrew back, pop panel, swap drive. PCIe Gen 4 M.2 2280.</td><td class="rc gd">User-replaceable NVMe M.2. Beginner-friendly with a guide. Search: <em>14-fm0013dx teardown</em> on YouTube.</td></tr>
+        <tr><td>RAM</td><td class="bd">Soldered — permanently 8 GB. Cannot be changed.</td><td class="bd">Soldered — permanently 16 GB.</td><td class="rc bd">Integrated — permanently 16 GB.</td></tr>
+        <tr><td>Wi-Fi card</td><td class="bd">Not user-replaceable.</td><td class="gd">Replaceable — sits on top of motherboard, easy to access after opening back panel.</td><td class="rc ok">Likely not user-replaceable on this model.</td></tr>
+        <tr><td>Difficulty</td><td class="bd">N/A — don't attempt</td><td class="ok">Medium — careful disassembly needed</td><td class="rc gd">Beginner-friendly with a guide</td></tr>
+        <tr><td>Recommended SSD</td><td>N/A</td><td colspan="2" class="rc">Samsung 990 Evo or WD Black SN770 · PCIe Gen 4 NVMe M.2 2280 · ~$60–$100 for 1 TB. Check iFixit.com for exact teardown guide before opening anything.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 8. REVIEWS -->
+<section class="section">
+  <div class="section-header"><div class="sec-num">8</div><h2>Review Summary</h2></div>
+  <div class="two-col">
+    <div>
+      <h3>ASUS Zenbook A14</h3>
+      <h4>What reviewers praise</h4>
+      <ul class="pcl">
+        <li><em class="ico p">+</em>Universally called one of the best thin-and-light AI PCs of 2025 — weight, feel, and battery are exceptional</li>
+        <li><em class="ico p">+</em>OLED display described as "stunning" — deep blacks, vivid colors, excellent for presentations and media</li>
+        <li><em class="ico p">+</em>Ceraluminum chassis praised as premium, unique, and genuinely scratch-resistant</li>
+        <li><em class="ico p">+</em>Comfortable keyboard and large trackpad highlighted positively</li>
+        <li><em class="ico p">+</em>Multiple reviewers report 15+ hours of real-world battery life</li>
+      </ul>
+      <h4>What reviewers criticize</h4>
+      <ul class="pcl">
+        <li><em class="ico c">✗</em>Windows on ARM compatibility is the #1 concern — niche and older apps may fail or run slowly</li>
+        <li><em class="ico c">✗</em>GPU called "extremely weak" — not suitable for anything graphically demanding</li>
+        <li><em class="ico c">✗</em>60 Hz display limits smooth scrolling vs. higher-refresh competitors</li>
+        <li><em class="ico c">✗</em>Glossy screen causes reflections in bright rooms or outdoors</li>
+      </ul>
+    </div>
+    <div>
+      <h3>HP OmniBook X Flip 14</h3>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">⭐ 4.7 / 5 stars · 937+ verified reviews at Best Buy</p>
+      <h4>What reviewers praise</h4>
+      <ul class="pcl">
+        <li><em class="ico p">+</em>Consistently praised for overall performance, portability, and long battery life</li>
+        <li><em class="ico p">+</em>Touchscreen crisp, responsive, and genuinely useful in tablet and tent modes</li>
+        <li><em class="ico p">+</em>Performance called "smooth" — multitasking, Office, video calls without lag</li>
+        <li><em class="ico p">+</em>Hinge feels solid and reliable despite flip-design concerns</li>
+        <li><em class="ico p">+</em>Port selection praised — two USB-A ports + Thunderbolt 4 covers nearly all professional needs</li>
+      </ul>
+      <h4>What reviewers criticize</h4>
+      <ul class="pcl">
+        <li><em class="ico c">✗</em>Trackpad is mushy and mediocre — the single most consistent complaint across all reviews</li>
+        <li><em class="ico c">✗</em>Keyboard has some flex under heavy typing</li>
+        <li><em class="ico c">✗</em>HP inflates the MSRP — reviewers strongly advise only buying on sale or open box</li>
+        <li><em class="ico c">✗</em>Battery life shorter than ARM-based competitors — adequate but not exceptional</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 9. RATINGS -->
+<section class="section">
+  <div class="section-header"><div class="sec-num">9</div><h2>Ratings — MIS Grad + PC Gamer + Steam Deck LCD</h2></div>
+  <div class="ratings-grid">
+    <div>
+      <h3 style="color:var(--gray);">Your HP (2020)</h3>
+      <div class="rb"><span class="rb-lbl">CPU performance</span><div class="rb-track"><div class="rb-fill" style="width:20%;background:#888780"></div></div><span class="rb-score">2/10</span></div>
+      <div class="rb"><span class="rb-lbl">Battery (now)</span><div class="rb-track"><div class="rb-fill" style="width:20%;background:#888780"></div></div><span class="rb-score">2/10</span></div>
+      <div class="rb"><span class="rb-lbl">Display quality</span><div class="rb-track"><div class="rb-fill" style="width:40%;background:#888780"></div></div><span class="rb-score">4/10</span></div>
+      <div class="rb"><span class="rb-lbl">MIS app support</span><div class="rb-track"><div class="rb-fill" style="width:60%;background:#888780"></div></div><span class="rb-score">6/10</span></div>
+      <div class="rb"><span class="rb-lbl">PC gaming</span><div class="rb-track"><div class="rb-fill" style="width:10%;background:#888780"></div></div><span class="rb-score">1/10</span></div>
+      <div class="rb"><span class="rb-lbl">Game Pass usability</span><div class="rb-track"><div class="rb-fill" style="width:20%;background:#888780"></div></div><span class="rb-score">2/10</span></div>
+      <div class="rb"><span class="rb-lbl">Versatility</span><div class="rb-track"><div class="rb-fill" style="width:30%;background:#888780"></div></div><span class="rb-score">3/10</span></div>
+      <div class="rb"><span class="rb-lbl">Overall value now</span><div class="rb-track"><div class="rb-fill" style="width:10%;background:#888780"></div></div><span class="rb-score">1/10</span></div>
+    </div>
+    <div>
+      <h3 style="color:var(--purple);">ASUS Zenbook A14</h3>
+      <div class="rb"><span class="rb-lbl">CPU performance</span><div class="rb-track"><div class="rb-fill" style="width:70%;background:#534AB7"></div></div><span class="rb-score">7/10</span></div>
+      <div class="rb"><span class="rb-lbl">Battery</span><div class="rb-track"><div class="rb-fill" style="width:95%;background:#534AB7"></div></div><span class="rb-score">9.5/10</span></div>
+      <div class="rb"><span class="rb-lbl">Display quality</span><div class="rb-track"><div class="rb-fill" style="width:90%;background:#534AB7"></div></div><span class="rb-score">9/10</span></div>
+      <div class="rb"><span class="rb-lbl">MIS app support</span><div class="rb-track"><div class="rb-fill" style="width:60%;background:#534AB7"></div></div><span class="rb-score">6/10</span></div>
+      <div class="rb"><span class="rb-lbl">PC gaming</span><div class="rb-track"><div class="rb-fill" style="width:20%;background:#534AB7"></div></div><span class="rb-score">2/10</span></div>
+      <div class="rb"><span class="rb-lbl">Game Pass usability</span><div class="rb-track"><div class="rb-fill" style="width:30%;background:#534AB7"></div></div><span class="rb-score">3/10</span></div>
+      <div class="rb"><span class="rb-lbl">Versatility</span><div class="rb-track"><div class="rb-fill" style="width:60%;background:#534AB7"></div></div><span class="rb-score">6/10</span></div>
+      <div class="rb"><span class="rb-lbl">Overall value (bundle)</span><div class="rb-track"><div class="rb-fill" style="width:60%;background:#534AB7"></div></div><span class="rb-score">6/10</span></div>
+    </div>
+    <div>
+      <h3 style="color:var(--blue);">HP OmniBook X Flip ★</h3>
+      <div class="rb"><span class="rb-lbl">CPU performance</span><div class="rb-track"><div class="rb-fill" style="width:80%;background:#185FA5"></div></div><span class="rb-score">8/10</span></div>
+      <div class="rb"><span class="rb-lbl">Battery</span><div class="rb-track"><div class="rb-fill" style="width:75%;background:#185FA5"></div></div><span class="rb-score">7.5/10</span></div>
+      <div class="rb"><span class="rb-lbl">Display quality</span><div class="rb-track"><div class="rb-fill" style="width:70%;background:#185FA5"></div></div><span class="rb-score">7/10</span></div>
+      <div class="rb"><span class="rb-lbl">MIS app support</span><div class="rb-track"><div class="rb-fill" style="width:100%;background:#185FA5"></div></div><span class="rb-score">10/10</span></div>
+      <div class="rb"><span class="rb-lbl">PC gaming</span><div class="rb-track"><div class="rb-fill" style="width:50%;background:#185FA5"></div></div><span class="rb-score">5/10</span></div>
+      <div class="rb"><span class="rb-lbl">Game Pass usability</span><div class="rb-track"><div class="rb-fill" style="width:90%;background:#185FA5"></div></div><span class="rb-score">9/10</span></div>
+      <div class="rb"><span class="rb-lbl">Versatility</span><div class="rb-track"><div class="rb-fill" style="width:90%;background:#185FA5"></div></div><span class="rb-score">9/10</span></div>
+      <div class="rb"><span class="rb-lbl">Overall value (open box + bundle)</span><div class="rb-track"><div class="rb-fill" style="width:100%;background:#185FA5"></div></div><span class="rb-score">10/10</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FINAL VERDICT -->
+<section class="section">
+  <div class="section-header"><div class="sec-num">10</div><h2>Final Verdict</h2></div>
+  <div class="verdict-grid">
+    <div class="vbox">
+      <h3>Choose the Zenbook A14 if:</h3>
+      <p>Your MIS career leans toward consulting, business analysis, or project management — roles relying primarily on mainstream cloud tools (Office 365, Salesforce, web-based Power BI, Zoom). You travel constantly and battery life and weight are your absolute top priorities. Your Steam Deck LCD handles 100% of your gaming and you have zero desire to game on your laptop. You're willing to visit <a href="https://arm64.app" target="_blank">arm64.app</a> before buying to verify every tool your future employer uses will run on ARM. The OLED display and premium build matter more to you than gaming flexibility.</p>
+      <div class="tags" style="margin-top:12px;"><span class="tag ta">⚠ Check arm64.app first</span><span class="tag tr">Game Pass mostly wasted</span></div>
+    </div>
+    <div class="vbox rec">
+      <h3 style="color:var(--blue);">★ Choose the HP OmniBook X Flip Open Box:</h3>
+      <p>This is the right laptop for your specific profile. Here is why every factor points here:</p>
+      <ul class="pcl" style="margin-top:8px;">
+        <li><em class="ico p">+</em><strong>MIS career:</strong> x86 Windows means SAP, Oracle, SQL Server, Tableau, Power BI Desktop, every VPN — zero asterisks, zero compatibility research on day one at a new job</li>
+        <li><em class="ico p">+</em><strong>Gaming:</strong> Intel Arc 130V makes the full $360 Game Pass bundle value redeemable — you can actually play those 500+ games at your desk</li>
+        <li><em class="ico p">+</em><strong>Xbox controller:</strong> Works for PC gaming on the HP and as a Bluetooth/USB controller docked with your Steam Deck LCD</li>
+        <li><em class="ico p">+</em><strong>Thunderbolt 4:</strong> Connects to any office docking station at a new job — monitors, keyboard, mouse, ethernet through one cable</li>
+        <li><em class="ico p">+</em><strong>Touchscreen + flip:</strong> Tablet mode and tent mode are genuinely useful for annotating requirements documents and presenting to clients</li>
+        <li><em class="ico p">+</em><strong>Value:</strong> Open box price (~$520–$698) + ~$639.86 bundle = effective cost of ~$0–$58 — essentially free if you're new to both services</li>
+        <li><em class="ico p">+</em><strong>Steam Deck synergy:</strong> Your Deck handles demanding games; the HP handles lighter PC/Game Pass titles at your desk — the perfect complement</li>
+      </ul>
+      <div class="tags" style="margin-top:12px;"><span class="tag tg">All MIS apps — no asterisks</span><span class="tag tg">Full Game Pass value</span><span class="tag tg">~$0–$58 net cost</span><span class="tag tg">Career-ready day one</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Sources: Best Buy product listings · Microsoft Ultimate College Bundle terms (valid 4/15/26–6/30/26) · Best Buy customer reviews (4.7/5, 937+ reviews for SKU 6613868) · iFixit teardown guides · <a href="https://arm64.app" target="_blank">arm64.app</a> compatibility database · Professional tech reviews of both devices.</p>
+  <p style="margin-top:6px;">Generated with Claude · May 2026</p>
+</footer>
+
+</body>
+</html>
