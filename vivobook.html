@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASUS Vivobook S 14 OLED — Laptop Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-page:#F4F2EE;--bg-card:#FAFAF8;--bg-muted:#EDEAE4;--bg-dark:#2C3A35;
+  --sage:#4A7C59;--sage-light:#EAF2EC;--sage-mid:#C6DEC9;--sage-dark:#33583E;
+  --slate:#4A6177;--slate-light:#E8EFF5;--slate-mid:#C0D2DF;
+  --amber:#7A5C2E;--amber-light:#F5EDD8;--amber-mid:#DEC898;
+  --coral:#8C4A3A;--coral-light:#F5E8E4;
+  --text-primary:#1E2420;--text-secondary:#4A5148;--text-muted:#7A7E79;--text-on-dark:#E8EDE9;
+  --border:#D4D0C8;--border-soft:#E4E1DA;
+  --r-sm:6px;--r-md:10px;--r-lg:16px;--r-xl:22px;
+  --sh-sm:0 1px 4px rgba(30,36,32,.07);--sh-md:0 3px 12px rgba(30,36,32,.09);
+  --font-d:'Lora',Georgia,serif;--font-b:'Source Sans 3','Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);font-size:16px;line-height:1.7;color:var(--text-primary);background:var(--bg-page);-webkit-font-smoothing:antialiased}
+a{color:var(--sage);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* TOP BAR */
+.topbar{background:var(--bg-dark);display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:52px;position:sticky;top:0;z-index:500;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.tab-nav{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;margin-right:12px}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-link{flex-shrink:0;font-family:var(--font-b);font-size:13px;font-weight:500;color:rgba(232,237,233,.65);padding:7px 14px;border-radius:var(--r-sm);white-space:nowrap;transition:background .18s,color .18s}
+.tab-link:hover{background:rgba(255,255,255,.08);color:var(--text-on-dark);text-decoration:none}
+.tab-link.active{background:var(--slate);color:#fff}
+.ham-btn{background:none;border:none;cursor:pointer;width:36px;height:36px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;flex-shrink:0;border-radius:var(--r-sm);transition:background .18s}
+.ham-btn:hover{background:rgba(255,255,255,.1)}
+.ham-bar{width:20px;height:2px;background:rgba(232,237,233,.75);border-radius:2px;transition:all .25s}
+.ham-btn.open .ham-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham-btn.open .ham-bar:nth-child(2){opacity:0;transform:scaleX(0)}
+.ham-btn.open .ham-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* DRAWER */
+.drawer{position:fixed;top:52px;right:-300px;width:280px;height:calc(100vh - 52px);background:var(--bg-card);box-shadow:var(--sh-md);z-index:499;overflow-y:auto;transition:right .28s cubic-bezier(.4,0,.2,1);border-left:1px solid var(--border)}
+.drawer.open{right:0}
+.drawer-overlay{display:none;position:fixed;inset:52px 0 0 0;background:rgba(0,0,0,.28);z-index:498}
+.drawer-overlay.open{display:block}
+.drawer-header{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);padding:18px 20px 10px;border-bottom:1px solid var(--border-soft)}
+.drawer-link{display:flex;align-items:center;gap:10px;padding:11px 20px;font-size:14px;color:var(--text-secondary);border-bottom:1px solid var(--border-soft);transition:background .15s,color .15s}
+.drawer-link:hover{background:var(--sage-light);color:var(--sage-dark);text-decoration:none}
+.drawer-num{font-size:10px;font-weight:700;color:var(--text-muted);background:var(--bg-muted);border-radius:4px;padding:1px 5px;flex-shrink:0;min-width:24px;text-align:center}
+
+/* LAYOUT */
+.main{max-width:960px;margin:0 auto;padding:44px 20px 80px}
+
+/* PRODUCT HERO */
+.product-hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-bottom:48px;background:var(--bg-card);border-radius:var(--r-xl);padding:36px;box-shadow:var(--sh-md);border:.5px solid var(--border)}
+@media(max-width:680px){.product-hero{grid-template-columns:1fr}}
+.product-img-wrap{background:var(--bg-muted);border-radius:var(--r-lg);overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:280px;position:relative}
+.product-img-wrap img{width:100%;height:100%;object-fit:contain;padding:20px}
+.product-img-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--text-muted);font-size:48px;min-height:280px;text-align:center;padding:20px}
+.product-img-placeholder span{font-size:14px;font-weight:500}
+.product-badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;background:var(--slate-light);color:var(--slate)}
+.product-name{font-family:var(--font-d);font-size:clamp(22px,4vw,32px);font-weight:600;color:var(--text-primary);line-height:1.2;margin-bottom:6px}
+.product-model{font-size:13px;color:var(--text-muted);margin-bottom:18px}
+.product-overview{font-size:15px;color:var(--text-secondary);line-height:1.7;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border-soft)}
+
+/* PRICING BLOCK */
+.pricing-block{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:18px}
+@media(max-width:500px){.pricing-block{grid-template-columns:1fr}}
+.price-card{border-radius:var(--r-md);padding:12px 14px;text-align:center}
+.price-card.msrp{background:var(--bg-muted);border:1px solid var(--border)}
+.price-card.current{background:var(--sage-light);border:1px solid var(--sage-mid)}
+.price-card.bundle{background:var(--bg-dark);border:none}
+.price-card-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);margin-bottom:4px}
+.price-card.current .price-card-lbl{color:var(--sage-dark)}
+.price-card.bundle .price-card-lbl{color:var(--sage-mid)}
+.price-card-val{font-family:var(--font-d);font-size:22px;font-weight:600;color:var(--text-primary)}
+.price-card.current .price-card-val{color:var(--sage-dark)}
+.price-card.bundle .price-card-val{color:#fff}
+.price-card-sub{font-size:11px;color:var(--text-muted);margin-top:3px}
+.price-card.bundle .price-card-sub{color:rgba(232,237,233,.55)}
+
+/* BUY BUTTON */
+.buy-btn{display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;padding:12px 24px;border-radius:var(--r-md);font-size:15px;font-weight:600;transition:background .18s,transform .15s;text-decoration:none}
+.buy-btn:hover{background:var(--sage-dark);transform:translateY(-1px);text-decoration:none}
+.buy-btn-sub{font-size:12px;color:var(--text-muted);margin-top:6px}
+
+/* SECTIONS */
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:11px;border-bottom:2px solid var(--sage)}
+.section-num{width:28px;height:28px;border-radius:50%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:13px;font-weight:600;flex-shrink:0}
+.section-header h2{font-family:var(--font-d);font-size:19px;font-weight:600;color:var(--text-primary)}
+h3{font-family:var(--font-d);font-size:16px;font-weight:600;color:var(--text-primary);margin:16px 0 7px}
+h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin:13px 0 5px}
+p{color:var(--text-secondary);margin-bottom:8px}
+
+/* SPEC GRID */
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--bg-card);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm);border:.5px solid var(--border)}
+@media(max-width:520px){.spec-grid{grid-template-columns:1fr}}
+.spec-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 14px;border-bottom:.5px solid var(--border-soft);font-size:13px;gap:8px}
+.spec-row:nth-child(even){background:var(--bg-muted)}
+.spec-label{color:var(--text-muted);font-weight:600;font-size:12px;flex-shrink:0;min-width:100px}
+.spec-val{text-align:right;color:var(--text-primary);font-weight:500}
+.spec-val.good{color:var(--sage-dark)}.spec-val.ok{color:var(--amber)}.spec-val.bad{color:var(--coral)}
+
+/* PRO CON */
+.pcl{list-style:none;margin:3px 0 10px}
+.pcl li{display:flex;align-items:flex-start;gap:7px;font-size:14px;line-height:1.5;margin-bottom:5px;color:var(--text-secondary)}
+.ico{flex-shrink:0;font-size:14px;font-style:normal;margin-top:2px}
+.pro{color:var(--sage)}.con{color:var(--coral)}.warn-ico{color:var(--amber)}
+
+/* NOTICES */
+.notice{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-radius:var(--r-md);font-size:14px;line-height:1.55;margin:9px 0}
+.n-icon{font-size:15px;flex-shrink:0;margin-top:1px}
+.n-sage{background:var(--sage-light);color:var(--sage-dark);border-left:3px solid var(--sage)}
+.n-amber{background:var(--amber-light);color:var(--amber);border-left:3px solid var(--amber-mid)}
+.n-slate{background:var(--slate-light);color:var(--slate);border-left:3px solid var(--slate-mid)}
+
+/* BACK LINK */
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);margin-bottom:24px;padding:6px 12px;border-radius:var(--r-sm);background:var(--bg-muted);border:.5px solid var(--border);transition:background .15s}
+.back-link:hover{background:var(--border-soft);text-decoration:none;color:var(--text-secondary)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0}.reveal.visible{animation:fadeUp .45s ease forwards}
+
+footer{background:var(--bg-dark);color:rgba(232,237,233,.45);text-align:center;font-size:12px;padding:24px 20px;line-height:1.7}
+footer a{color:var(--sage-mid)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <nav class="tab-nav" aria-label="Site pages">
+    <a href="index.html" class="tab-link">Laptop Comparison</a>
+    <a href="vivobook.html" class="tab-link active">VivoBook S14</a>
+    <a href="omnibook-ultra5.html" class="tab-link">OmniBook X (Ultra 5)</a>
+    <a href="omnibook-ultra7.html" class="tab-link">OmniBook X (Ultra 7)</a>
+  </nav>
+  <button class="ham-btn" id="hamBtn" aria-label="Page sections menu" aria-expanded="false">
+    <span class="ham-bar"></span><span class="ham-bar"></span><span class="ham-bar"></span>
+  </button>
+</div>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="Page sections">
+  <div class="drawer-header">On this page</div>
+  <a href="#overview"  class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">1</span>Overview &amp; Pricing</a>
+  <a href="#specs"     class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">2</span>Full Specifications</a>
+  <a href="#pros-cons" class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">3</span>Pros &amp; Cons</a>
+  <a href="#charging"  class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">4</span>Charging</a>
+  <a href="#mis-fit"   class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">5</span>MIS Career Fit</a>
+  <a href="#gaming-fit"class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">6</span>Gaming &amp; Steam Deck</a>
+  <a href="#upgrades"  class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">7</span>Upgradability</a>
+  <a href="#verdict"   class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">8</span>Verdict</a>
+</div>
+
+<main class="main">
+  <a href="index.html" class="back-link">← Back to Full Comparison</a>
+
+  <!-- PRODUCT HERO -->
+  <div class="product-hero reveal" id="overview">
+    <div class="product-img-wrap">
+      <div class="product-img-placeholder">
+        💻
+        <span>ASUS Vivobook S 14 OLED<br>Copilot+ PC · Black</span>
+      </div>
+    </div>
+    <div>
+      <span class="product-badge">Option A · Comparison Guide</span>
+      <div class="product-name">ASUS Vivobook S 14 OLED</div>
+      <div class="product-model">Model: S5406SA-WH79 · Intel Core Ultra 7 258V · Black · Copilot+ PC</div>
+      <p class="product-overview">The ASUS Vivobook S 14 is the raw performance leader of the three options — the only laptop in this comparison with 32 GB of RAM and 1 TB of storage included at base price. Its OLED display delivers 600 nits of brightness and 100% DCI-P3 color coverage, making it the best display in the group. Reviewers call it "a great value at $799" and "good almost everywhere, fundamentally bad nowhere." The main trade-off versus the HP OmniBook options is the lack of a touchscreen or flip mode. For MIS students heading into data-heavy roles, the 32 GB RAM is a genuine long-term advantage. Built with an all-metal chassis, MIL-STD 810H military durability certification, Wi-Fi 7, and dual Thunderbolt 4 ports, it won the iF Design Award 2025.</p>
+
+      <div class="pricing-block">
+        <div class="price-card msrp">
+          <div class="price-card-lbl">MSRP</div>
+          <div class="price-card-val">$957</div>
+          <div class="price-card-sub">Amazon / Staples list price</div>
+        </div>
+        <div class="price-card current">
+          <div class="price-card-lbl">Current Best Price</div>
+          <div class="price-card-val">~$865</div>
+          <div class="price-card-sub">Walmart (price varies — check link)</div>
+        </div>
+        <div class="price-card bundle">
+          <div class="price-card-lbl">After MS Bundle</div>
+          <div class="price-card-val">~$225</div>
+          <div class="price-card-sub">If new to both M365 + Game Pass</div>
+        </div>
+      </div>
+
+      <a class="buy-btn" href="https://www.walmart.com/ip/ASUS-Vivobook-S-14-14-WUXGA-OLED-PC-Laptop-Intel-Core-Ultra-7-32GB-RAM-1TB-SSD-Black-S5406/7447569796" target="_blank" rel="noopener">
+        🛒 Buy at Walmart
+      </a>
+      <div class="buy-btn-sub">MSRP: $957 · Current: ~$865 · Free shipping · Best price for this model</div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: SPECS -->
+  <section class="section reveal" id="specs">
+    <div class="section-header"><div class="section-num">2</div><h2>Full Specifications</h2></div>
+    <div class="spec-grid">
+      <div class="spec-row"><span class="spec-label">Processor</span><span class="spec-val good">Intel Core Ultra 7 258V · 8-core · up to 4.8 GHz · 47 TOPS NPU</span></div>
+      <div class="spec-row"><span class="spec-label">RAM</span><span class="spec-val good">32 GB LPDDR5X-8533 · soldered (cannot upgrade)</span></div>
+      <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-val good">1 TB PCIe Gen 4 NVMe M.2 SSD · user-replaceable</span></div>
+      <div class="spec-row"><span class="spec-label">Display</span><span class="spec-val good">14" OLED · 1920×1200 (16:10) · 60 Hz · 600 nits HDR · 100% DCI-P3</span></div>
+      <div class="spec-row"><span class="spec-label">GPU</span><span class="spec-val good">Intel Arc 140V · integrated · up to 8 GB system memory</span></div>
+      <div class="spec-row"><span class="spec-label">Touchscreen</span><span class="spec-val bad">No touchscreen · no flip modes</span></div>
+      <div class="spec-row"><span class="spec-label">Weight</span><span class="spec-val good">~2.87 lbs (1.3 kg) · slim at &lt;14mm thin</span></div>
+      <div class="spec-row"><span class="spec-label">Battery</span><span class="spec-val good">75 Wh · up to 16–17 hrs real-world</span></div>
+      <div class="spec-row"><span class="spec-label">Charging</span><span class="spec-val good">USB-C Power Delivery via either Thunderbolt 4 port · 65W included · supports up to 90W PD</span></div>
+      <div class="spec-row"><span class="spec-label">Ports</span><span class="spec-val good">2× Thunderbolt 4 (USB-C, 40Gbps, PD, DP) · 2× USB-A 3.2 · HDMI 2.1 · microSD · 3.5mm audio</span></div>
+      <div class="spec-row"><span class="spec-label">Wi-Fi</span><span class="spec-val good">Wi-Fi 7 (802.11be) · Bluetooth 5.4</span></div>
+      <div class="spec-row"><span class="spec-label">Webcam</span><span class="spec-val good">ASUS AiSense camera · Windows Hello IR · AI noise canceling</span></div>
+      <div class="spec-row"><span class="spec-label">Keyboard</span><span class="spec-val good">RGB backlit · 1-zone · 1.7mm key travel · Copilot key</span></div>
+      <div class="spec-row"><span class="spec-label">Build</span><span class="spec-val good">Ceraluminum alloy chassis · MIL-STD 810H certified · iF Design Award 2025</span></div>
+      <div class="spec-row"><span class="spec-label">Audio</span><span class="spec-val good">Harman/Kardon speakers · Dolby Atmos</span></div>
+      <div class="spec-row"><span class="spec-label">OS</span><span class="spec-val good">Windows 11 Home x86 · Copilot+ PC</span></div>
+      <div class="spec-row"><span class="spec-label">Color</span><span class="spec-val">Neutral Black</span></div>
+      <div class="spec-row"><span class="spec-label">Model number</span><span class="spec-val">S5406SA-WH79</span></div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: PROS AND CONS -->
+  <section class="section reveal" id="pros-cons">
+    <div class="section-header"><div class="section-num">3</div><h2>Pros &amp; Cons</h2></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div>
+        <h4>Pros</h4>
+        <ul class="pcl">
+          <li><em class="ico pro">+</em><strong>32 GB RAM</strong> — best in this comparison; handles heavy MIS multitasking, large SQL queries, Power BI models, and multiple apps without lag</li>
+          <li><em class="ico pro">+</em><strong>1 TB storage included</strong> — no day-one capacity anxiety; plenty of room for datasets, projects, and media</li>
+          <li><em class="ico pro">+</em><strong>OLED display</strong> — stunning 600-nit HDR screen, deep blacks, vibrant colors; best display in this group for presentations and creative work</li>
+          <li><em class="ico pro">+</em><strong>Wi-Fi 7</strong> — fastest wireless standard available; noticeably better throughput than Wi-Fi 6E on supporting networks</li>
+          <li><em class="ico pro">+</em><strong>Dual Thunderbolt 4</strong> — two full-bandwidth TB4 ports, either of which can charge the laptop, drive an external monitor, or connect a docking station</li>
+          <li><em class="ico pro">+</em><strong>Charge from either side</strong> — unique advantage: both TB4 ports charge the laptop, so you can plug in from the left or right side of your desk</li>
+          <li><em class="ico pro">+</em><strong>MIL-STD 810H durability</strong> — tested against drops, temperature extremes, and humidity; genuinely durable for campus and travel use</li>
+          <li><em class="ico pro">+</em><strong>Featherlight</strong> — at 2.87 lbs, noticeably lighter than both HP models; a real difference over a full school day</li>
+          <li><em class="ico pro">+</em><strong>Battery life class-leading</strong> — 16–17 hours real-world means you genuinely won't need your charger most days</li>
+          <li><em class="ico pro">+</em><strong>Harman/Kardon + Dolby Atmos</strong> — surprisingly good laptop speakers for audio work, calls, and media</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cons</h4>
+        <ul class="pcl">
+          <li><em class="ico con">✗</em><strong>No touchscreen or flip</strong> — cannot be used in tablet mode; no stylus support; can't annotate documents or present in tent mode like the HP OmniBook</li>
+          <li><em class="ico con">✗</em><strong>Glossy OLED screen</strong> — beautiful indoors but visible reflections in bright rooms or outdoors; matte screen would be better for outdoor work</li>
+          <li><em class="ico con">✗</em><strong>60 Hz display</strong> — the OLED panel only runs at 60 Hz; some competitor OLED panels offer 120 Hz for smoother scrolling</li>
+          <li><em class="ico con">✗</em><strong>RAM cannot be upgraded</strong> — 32 GB is soldered; can't add more later (though 32 GB is genuinely future-proof for most uses)</li>
+          <li><em class="ico con">✗</em><strong>Price varies by retailer</strong> — Walmart lists it near $799–$865; Amazon and Staples charge up to $957 for the same model. Always buy from Walmart for this one.</li>
+          <li><em class="ico con">✗</em><strong>Intel Arc 140V GPU is integrated</strong> — handles Game Pass and lighter Steam games, but not a gaming laptop; demanding games need low settings</li>
+          <li><em class="ico con">✗</em><strong>No SD card slot</strong> — only microSD; not ideal if you use full-size SD cards from cameras or other devices</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CHARGING -->
+  <section class="section reveal" id="charging">
+    <div class="section-header"><div class="section-num">4</div><h2>Charging</h2></div>
+    <div class="spec-grid" style="margin-bottom:16px;">
+      <div class="spec-row"><span class="spec-label">Connector type</span><span class="spec-val good">USB-C Power Delivery — universal standard</span></div>
+      <div class="spec-row"><span class="spec-label">Charging ports</span><span class="spec-val good">Either Thunderbolt 4 port — charge from left or right side</span></div>
+      <div class="spec-row"><span class="spec-label">Included adapter</span><span class="spec-val good">65W USB-C PD adapter</span></div>
+      <div class="spec-row"><span class="spec-label">Max PD supported</span><span class="spec-val good">Up to 90W USB-C PD</span></div>
+      <div class="spec-row"><span class="spec-label">Fast charging</span><span class="spec-val good">Yes — 0→50% in ~40 min at 65W+</span></div>
+      <div class="spec-row"><span class="spec-label">Power bank support</span><span class="spec-val good">Yes — any 45W+ USB-C PD power bank works</span></div>
+      <div class="spec-row"><span class="spec-label">Airport USB-C outlets</span><span class="spec-val good">Yes — any USB-C outlet works (slower at lower wattage)</span></div>
+      <div class="spec-row"><span class="spec-label">3rd-party chargers</span><span class="spec-val good">Any quality 65W+ USB-C PD charger — no quirks or warnings</span></div>
+      <div class="spec-row"><span class="spec-label">Shares cable with Steam Deck</span><span class="spec-val good">Yes — same USB-C PD standard</span></div>
+    </div>
+    <div class="notice n-sage"><span class="n-icon">✓</span><span><strong>Best charging flexibility in this comparison.</strong> Both Thunderbolt 4 ports charge the laptop, so you can plug in from either side — a genuine quality-of-life advantage. A 65W GaN USB-C charger (~$25) replaces your included brick and also charges your Steam Deck and phone. For heavy sustained workloads, consider a 90W charger for maximum charging speed under load.</span></div>
+  </section>
+
+  <!-- SECTION 5: MIS FIT -->
+  <section class="section reveal" id="mis-fit">
+    <div class="section-header"><div class="section-num">5</div><h2>MIS Career Fit</h2></div>
+    <p>The Vivobook S14 is the strongest performer for data-heavy MIS roles. The 32 GB RAM is genuinely future-proof — you'll be able to run SQL Server, multiple browser tabs, Power BI Desktop, and Teams calls simultaneously without hitting memory limits. Standard x86 Windows means every enterprise tool works: SAP, Oracle, Tableau, company VPNs, proprietary IT software — all without compatibility research.</p>
+    <h4>Best MIS roles for this laptop</h4>
+    <ul class="pcl">
+      <li><em class="ico pro">+</em><strong>Database administrator / data engineer</strong> — 32 GB handles large query results, multiple database connections, and virtualization comfortably</li>
+      <li><em class="ico pro">+</em><strong>Business intelligence analyst</strong> — Power BI Desktop with large datasets, Excel with complex models, and Tableau all benefit from 32 GB</li>
+      <li><em class="ico pro">+</em><strong>Consulting / business analyst</strong> — OLED display is excellent for client presentations; lightweight for travel-heavy roles</li>
+      <li><em class="ico pro">+</em><strong>IT project manager</strong> — handles all productivity software, video calls, and documentation without strain</li>
+    </ul>
+    <h4>Caveat</h4>
+    <ul class="pcl">
+      <li><em class="ico warn-ico">!</em>If your role requires using a touchscreen for annotating requirements documents, whiteboarding with teams, or switching to tablet mode for client demos, the HP OmniBook X Flip (Option C) handles this better — the Vivobook has no touchscreen at all</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 6: GAMING -->
+  <section class="section reveal" id="gaming-fit">
+    <div class="section-header"><div class="section-num">6</div><h2>Gaming &amp; Steam Deck LCD</h2></div>
+    <p>The Intel Arc 140V GPU handles lighter gaming better than you might expect from an integrated solution — it runs most Game Pass titles and indie/older Steam games at good settings. Your Steam Deck LCD remains the right tool for demanding games; the Vivobook complements it for desk-based lighter gaming.</p>
+    <ul class="pcl">
+      <li><em class="ico pro">+</em>Xbox Game Pass — full library accessible, most titles run at playable settings</li>
+      <li><em class="ico pro">+</em>Indie and older Steam games — runs at medium-to-good settings comfortably</li>
+      <li><em class="ico pro">+</em>Cloud gaming via Game Pass — works well through any browser</li>
+      <li><em class="ico pro">+</em>Xbox controller from Microsoft bundle — works via Bluetooth for PC gaming on this laptop</li>
+      <li><em class="ico con">✗</em>AAA / demanding titles — possible at low settings only; not a gaming laptop</li>
+      <li><em class="ico con">✗</em>Not a replacement for your Steam Deck for serious gaming</li>
+    </ul>
+    <div class="notice n-slate"><span class="n-icon">🎮</span><span>Same USB-C charger powers this laptop and your Steam Deck LCD. Bring one 65W GaN charger for everything.</span></div>
+  </section>
+
+  <!-- SECTION 7: UPGRADES -->
+  <section class="section reveal" id="upgrades">
+    <div class="section-header"><div class="section-num">7</div><h2>Upgradability</h2></div>
+    <div class="spec-grid" style="margin-bottom:14px;">
+      <div class="spec-row"><span class="spec-label">SSD</span><span class="spec-val good">User-replaceable M.2 PCIe Gen 4 NVMe slot · medium difficulty</span></div>
+      <div class="spec-row"><span class="spec-label">RAM</span><span class="spec-val bad">Soldered — permanently 32 GB · cannot upgrade or replace</span></div>
+      <div class="spec-row"><span class="spec-label">Wi-Fi card</span><span class="spec-val good">Accessible after opening back panel</span></div>
+      <div class="spec-row"><span class="spec-label">Battery</span><span class="spec-val ok">Replaceable but requires careful disassembly</span></div>
+      <div class="spec-row"><span class="spec-label">Difficulty</span><span class="spec-val ok">Medium — careful back panel removal needed; Torx screws</span></div>
+      <div class="spec-row"><span class="spec-label">Recommended SSD</span><span class="spec-val">Samsung 990 Evo or WD Black SN770 · PCIe Gen 4 NVMe M.2 2280</span></div>
+    </div>
+    <div class="notice n-amber"><span class="n-icon">!</span><span>Search YouTube for "ASUS S5406SA teardown" before opening. The 1 TB base storage means SSD upgrades are less urgent than on the HP models — you likely won't need more space for several years.</span></div>
+  </section>
+
+  <!-- SECTION 8: VERDICT -->
+  <section class="section reveal" id="verdict">
+    <div class="section-header"><div class="section-num">8</div><h2>Verdict</h2></div>
+    <p>The ASUS Vivobook S 14 OLED is the right choice if you want the most capable MIS laptop in this comparison and don't need a touchscreen. With 32 GB RAM, 1 TB storage, an OLED display, Wi-Fi 7, and MIL-STD 810H durability, it punches above its price. The OLED display is genuinely stunning for presentations. The battery lasts all day without a charger. The dual Thunderbolt 4 ports handle any docking setup at a new job.</p>
+    <p>The main trade-off is the lack of a touchscreen — if you annotate documents, sketch wireframes, or use tablet mode for client demos, the HP OmniBook X Flip (Option C) serves those needs better. But if your MIS career path leans toward data engineering, business intelligence, or database administration where 32 GB of RAM will be genuinely useful for years, the Vivobook S14 is the stronger long-term investment.</p>
+    <div class="notice n-sage"><span class="n-icon">✓</span><span><strong>Buy at Walmart for ~$799–$865.</strong> Do not buy from Amazon ($957) or Staples — same laptop, significantly higher price. The Walmart listing delivers for free and is identical hardware.</span></div>
+    <div style="margin-top:20px;">
+      <a class="buy-btn" href="https://www.walmart.com/ip/ASUS-Vivobook-S-14-14-WUXGA-OLED-PC-Laptop-Intel-Core-Ultra-7-32GB-RAM-1TB-SSD-Black-S5406/7447569796" target="_blank" rel="noopener">
+        🛒 Buy at Walmart — ASUS Vivobook S14
+      </a>
+      <div class="buy-btn-sub">MSRP: $957 · Current Walmart price: ~$865 · Free shipping</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Sources: Walmart product listing · ASUS official specs (S5406SA-WH79) · iFixit teardown guides · Lon Seidman review · Windows Forum analysis · Generated with Claude · May 2026</p>
+  <p style="margin-top:5px;"><a href="index.html">← Back to Full Comparison</a></p>
+</footer>
+
+<script>
+const btn=document.getElementById('hamBtn');
+const drawer=document.getElementById('drawer');
+const overlay=document.getElementById('drawerOverlay');
+function openDrawer(){btn.classList.add('open');drawer.classList.add('open');overlay.classList.add('open');btn.setAttribute('aria-expanded','true')}
+function closeDrawer(){btn.classList.remove('open');drawer.classList.remove('open');overlay.classList.remove('open');btn.setAttribute('aria-expanded','false')}
+btn.addEventListener('click',()=>drawer.classList.contains('open')?closeDrawer():openDrawer());
+overlay.addEventListener('click',closeDrawer);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){e.target.style.animationDelay=(i*.04)+'s';e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.07});
+reveals.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
