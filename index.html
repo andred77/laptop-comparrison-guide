@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laptop Comparison — MIS Graduate Buying Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══ DESIGN SYSTEM ═══ */
+:root{
+  --bg-page:#F4F2EE;--bg-card:#FAFAF8;--bg-muted:#EDEAE4;--bg-dark:#2C3A35;
+  --sage:#4A7C59;--sage-light:#EAF2EC;--sage-mid:#C6DEC9;--sage-dark:#33583E;
+  --slate:#4A6177;--slate-light:#E8EFF5;--slate-mid:#C0D2DF;
+  --amber:#7A5C2E;--amber-light:#F5EDD8;--amber-mid:#DEC898;
+  --coral:#8C4A3A;--coral-light:#F5E8E4;
+  --text-primary:#1E2420;--text-secondary:#4A5148;--text-muted:#7A7E79;--text-on-dark:#E8EDE9;
+  --border:#D4D0C8;--border-soft:#E4E1DA;
+  --r-sm:6px;--r-md:10px;--r-lg:16px;--r-xl:22px;
+  --sh-sm:0 1px 4px rgba(30,36,32,.07);--sh-md:0 3px 12px rgba(30,36,32,.09);--sh-lg:0 8px 28px rgba(30,36,32,.12);
+  --font-d:'Lora',Georgia,serif;--font-b:'Source Sans 3','Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);font-size:16px;line-height:1.7;color:var(--text-primary);background:var(--bg-page);-webkit-font-smoothing:antialiased}
+a{color:var(--sage);text-decoration:none}
+a:hover{text-decoration:underline}
+.skip-link{position:absolute;left:-9999px;top:8px;background:var(--sage);color:#fff;padding:8px 16px;border-radius:var(--r-sm);font-size:14px;z-index:2000}
+.skip-link:focus{left:8px}
+
+/* ═══ TOP BAR — tabs + hamburger ═══ */
+.topbar{
+  background:var(--bg-dark);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;height:52px;position:sticky;top:0;z-index:500;
+  box-shadow:0 2px 8px rgba(0,0,0,.18);
+}
+.tab-nav{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;margin-right:12px}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-link{
+  flex-shrink:0;font-family:var(--font-b);font-size:13px;font-weight:500;
+  color:rgba(232,237,233,.65);padding:7px 14px;border-radius:var(--r-sm);
+  white-space:nowrap;transition:background .18s,color .18s;
+}
+.tab-link:hover{background:rgba(255,255,255,.08);color:var(--text-on-dark);text-decoration:none}
+.tab-link.active{background:var(--sage);color:#fff}
+
+/* ═══ HAMBURGER BUTTON ═══ */
+.ham-btn{
+  background:none;border:none;cursor:pointer;
+  width:36px;height:36px;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;gap:5px;flex-shrink:0;
+  border-radius:var(--r-sm);transition:background .18s;
+}
+.ham-btn:hover{background:rgba(255,255,255,.1)}
+.ham-bar{width:20px;height:2px;background:rgba(232,237,233,.75);border-radius:2px;transition:all .25s}
+.ham-btn.open .ham-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham-btn.open .ham-bar:nth-child(2){opacity:0;transform:scaleX(0)}
+.ham-btn.open .ham-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ═══ SLIDE-OUT DRAWER ═══ */
+.drawer{
+  position:fixed;top:52px;right:-300px;width:280px;height:calc(100vh - 52px);
+  background:var(--bg-card);box-shadow:var(--sh-lg);z-index:499;
+  overflow-y:auto;transition:right .28s cubic-bezier(.4,0,.2,1);
+  border-left:1px solid var(--border);
+}
+.drawer.open{right:0}
+.drawer-overlay{
+  display:none;position:fixed;inset:52px 0 0 0;background:rgba(0,0,0,.28);z-index:498;
+}
+.drawer-overlay.open{display:block}
+.drawer-header{
+  font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--text-muted);padding:18px 20px 10px;border-bottom:1px solid var(--border-soft);
+}
+.drawer-link{
+  display:flex;align-items:center;gap:10px;
+  padding:11px 20px;font-size:14px;color:var(--text-secondary);
+  border-bottom:1px solid var(--border-soft);transition:background .15s,color .15s;
+}
+.drawer-link:hover{background:var(--sage-light);color:var(--sage-dark);text-decoration:none}
+.drawer-num{
+  font-size:10px;font-weight:700;color:var(--text-muted);
+  background:var(--bg-muted);border-radius:4px;padding:1px 5px;flex-shrink:0;min-width:24px;text-align:center;
+}
+
+/* ═══ HERO ═══ */
+.hero{background:var(--bg-dark);padding:60px 24px 50px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 20%,rgba(74,124,89,.25),transparent 65%);pointer-events:none}
+.hero-inner{max-width:820px;margin:0 auto;position:relative}
+.hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-mid);margin-bottom:14px}
+.hero h1{font-family:var(--font-d);font-size:clamp(26px,5vw,46px);font-weight:600;line-height:1.15;color:var(--text-on-dark);margin-bottom:12px}
+.hero h1 em{font-style:italic;color:var(--sage-mid)}
+.hero-desc{font-size:16px;line-height:1.65;color:rgba(232,237,233,.72);max-width:580px;margin-bottom:26px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12px;font-weight:500;padding:4px 11px;border-radius:99px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);color:rgba(232,237,233,.8)}
+
+/* ═══ LAYOUT ═══ */
+.main{max-width:1100px;margin:0 auto;padding:44px 20px 80px}
+.section{margin-bottom:56px}
+.section-header{display:flex;align-items:center;gap:13px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--sage)}
+.section-num{width:30px;height:30px;border-radius:50%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:13px;font-weight:600;flex-shrink:0}
+.section-header h2{font-family:var(--font-d);font-size:21px;font-weight:600;color:var(--text-primary)}
+h3{font-family:var(--font-d);font-size:17px;font-weight:600;color:var(--text-primary);margin:18px 0 8px}
+h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin:14px 0 5px}
+p{color:var(--text-secondary);margin-bottom:9px}
+
+/* ═══ NOTICES ═══ */
+.notice{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-radius:var(--r-md);font-size:14px;line-height:1.55;margin:9px 0}
+.n-icon{font-size:15px;flex-shrink:0;margin-top:1px}
+.n-sage{background:var(--sage-light);color:var(--sage-dark);border-left:3px solid var(--sage)}
+.n-amber{background:var(--amber-light);color:var(--amber);border-left:3px solid var(--amber-mid)}
+.n-coral{background:var(--coral-light);color:var(--coral);border-left:3px solid var(--coral)}
+.n-slate{background:var(--slate-light);color:var(--slate);border-left:3px solid var(--slate-mid)}
+
+/* ═══ BUNDLE METRICS ═══ */
+.bundle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+@media(max-width:660px){.bundle-grid{grid-template-columns:1fr 1fr}}
+.metric{background:var(--bg-card);border:1px solid var(--border-soft);border-radius:var(--r-lg);padding:16px;box-shadow:var(--sh-sm)}
+.metric.total{background:var(--bg-dark);border-color:var(--bg-dark)}
+.m-lbl{font-size:10px;font-weight:700;color:var(--sage);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.metric.total .m-lbl{color:var(--sage-mid)}
+.m-val{font-family:var(--font-d);font-size:24px;font-weight:600;color:var(--text-primary);line-height:1.1}
+.metric.total .m-val{color:#fff}
+.m-sub{font-size:11px;color:var(--text-muted);margin-top:4px;line-height:1.4}
+.metric.total .m-sub{color:rgba(232,237,233,.55)}
+
+/* ═══ LAPTOP CARDS ═══ */
+.laptop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:18px 0}
+@media(max-width:900px){.laptop-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.laptop-grid{grid-template-columns:1fr}}
+.lcard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-xl);padding:18px;box-shadow:var(--sh-sm);display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+.lcard:hover{box-shadow:var(--sh-md);transform:translateY(-2px)}
+.lcard.cur{background:var(--bg-muted)}
+.lcard.rec{border:2px solid var(--sage);background:#F7FBF8}
+.lcard.cau{border:2px solid var(--amber-mid);background:#FDFAF4}
+.card-badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 9px;border-radius:99px;margin-bottom:7px;letter-spacing:.04em;text-transform:uppercase}
+.b-gray{background:var(--bg-muted);color:var(--text-muted)}
+.b-sage{background:var(--sage-light);color:var(--sage-dark)}
+.b-slate{background:var(--slate-light);color:var(--slate)}
+.b-amber{background:var(--amber-light);color:var(--amber)}
+.cname{font-family:var(--font-d);font-size:14px;font-weight:600;color:var(--text-primary);line-height:1.3;margin-bottom:2px}
+.csub{font-size:11px;color:var(--text-muted);margin-bottom:8px;line-height:1.35}
+.cprice{font-size:18px;font-weight:600;color:var(--text-primary)}
+.cprice-eff{font-size:12px;font-weight:600;color:var(--sage);margin-top:2px}
+.cprice-eff.warn{color:var(--amber)}
+.cprice-sub{font-size:11px;color:var(--text-muted);margin-bottom:10px;line-height:1.4}
+.price-upd{display:inline-block;background:var(--amber-light);color:var(--amber);font-size:10px;font-weight:700;padding:3px 8px;border-radius:99px;margin-bottom:6px}
+
+/* SPEC ROWS */
+.sdiv{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin:10px 0 3px}
+.sr{display:flex;justify-content:space-between;align-items:flex-start;padding:3px 0;border-bottom:.5px solid var(--border-soft);font-size:11.5px;gap:5px}
+.sr:last-of-type{border-bottom:none}
+.sl{color:var(--text-muted);flex-shrink:0}
+.sv{font-weight:500;text-align:right;color:var(--text-primary)}
+.sv.g{color:var(--sage-dark)}.sv.r{color:var(--coral)}.sv.a{color:var(--amber)}
+
+/* PRO CON */
+.pcl{list-style:none;margin:3px 0 8px}
+.pcl li{display:flex;align-items:flex-start;gap:6px;font-size:12px;line-height:1.45;margin-bottom:3px;color:var(--text-secondary)}
+.ico{flex-shrink:0;font-size:12px;font-style:normal;margin-top:1px}
+.pro{color:var(--sage)}.con{color:var(--coral)}.warn-ico{color:var(--amber)}
+
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:9px}
+.tag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:99px}
+.t-sage{background:var(--sage-light);color:var(--sage-dark)}
+.t-coral{background:var(--coral-light);color:var(--coral)}
+.t-amber{background:var(--amber-light);color:var(--amber)}
+.t-slate{background:var(--slate-light);color:var(--slate)}
+
+/* TABLES */
+.tw{overflow-x:auto;margin:13px 0;border-radius:var(--r-lg);box-shadow:var(--sh-md);border:.5px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;background:var(--bg-card)}
+thead th{background:var(--bg-dark);color:var(--text-on-dark);font-weight:600;font-size:12px;padding:10px 12px;text-align:left;white-space:nowrap}
+thead th:first-child{border-radius:var(--r-lg) 0 0 0}
+thead th:last-child{border-radius:0 var(--r-lg) 0 0}
+tbody tr:nth-child(even){background:var(--bg-muted)}
+tbody td{padding:9px 12px;border-bottom:.5px solid var(--border-soft);vertical-align:top;line-height:1.45;color:var(--text-secondary)}
+tbody tr:last-child td{border-bottom:none}
+tbody td:first-child{color:var(--text-muted);font-weight:600;font-size:11.5px}
+td.hs{background:#EEF7F0!important}
+td.hb{background:#EBF4FD!important}
+td.gd{color:var(--sage-dark);font-weight:600}
+td.bd{color:var(--coral)}
+td.ok{color:var(--amber)}
+
+/* RATING BARS */
+.rg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:800px){.rg{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.rg{grid-template-columns:1fr}}
+.rb{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.rl{flex:0 0 128px;font-size:10.5px;color:var(--text-muted)}
+.rt{flex:1;height:5px;background:var(--bg-muted);border-radius:99px;overflow:hidden}
+.rf{height:100%;border-radius:99px}
+.rs{flex:0 0 36px;text-align:right;font-weight:700;font-size:10.5px;color:var(--text-secondary)}
+
+/* COST CARDS */
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin:13px 0}
+@media(max-width:680px){.cg{grid-template-columns:1fr 1fr}}
+.cc{background:var(--bg-card);border:.5px solid var(--border);border-radius:var(--r-lg);padding:14px;box-shadow:var(--sh-sm)}
+.cc.win{background:var(--sage-light);border-color:var(--sage-mid)}
+.cc.cau-c{background:var(--amber-light);border-color:var(--amber-mid)}
+.cc-lbl{font-size:10px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.cc-val{font-family:var(--font-d);font-size:20px;font-weight:600;color:var(--text-primary)}
+.cc.win .cc-val{color:var(--sage-dark)}
+.cc.cau-c .cc-val{color:var(--amber)}
+.cc-note{font-size:11px;color:var(--text-muted);margin-top:4px;line-height:1.4}
+
+/* VERDICT */
+.vg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px;margin-top:16px}
+@media(max-width:760px){.vg{grid-template-columns:1fr}}
+.vbox{background:var(--bg-card);border:.5px solid var(--border);border-radius:var(--r-xl);padding:20px;box-shadow:var(--sh-sm);font-size:13.5px;line-height:1.65;color:var(--text-secondary)}
+.vbox.vs{border-top:4px solid var(--sage);background:#F7FBF8}
+.vbox.vsl{border-top:4px solid var(--slate);background:#F5F8FC}
+.vbox.vc{border-top:4px solid var(--coral);background:#FBF5F4}
+.vbox h3{margin-top:0;margin-bottom:8px}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:620px){.two-col{grid-template-columns:1fr}}
+
+/* REVEAL */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0}
+.reveal.visible{animation:fadeUp .45s ease forwards}
+
+/* FOOTER */
+footer{background:var(--bg-dark);color:rgba(232,237,233,.45);text-align:center;font-size:12px;padding:26px 20px;line-height:1.7}
+footer a{color:var(--sage-mid)}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- ═══ TOP BAR ═══ -->
+<div class="topbar">
+  <nav class="tab-nav" aria-label="Site pages">
+    <a href="index.html" class="tab-link active">Laptop Comparison</a>
+    <a href="vivobook.html" class="tab-link">VivoBook S14</a>
+    <a href="omnibook-ultra5.html" class="tab-link">OmniBook X (Ultra 5)</a>
+    <a href="omnibook-ultra7.html" class="tab-link">OmniBook X (Ultra 7)</a>
+  </nav>
+  <button class="ham-btn" id="hamBtn" aria-label="Page sections menu" aria-expanded="false">
+    <span class="ham-bar"></span><span class="ham-bar"></span><span class="ham-bar"></span>
+  </button>
+</div>
+
+<!-- ═══ DRAWER ═══ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="Page sections">
+  <div class="drawer-header">On this page</div>
+  <a href="#bundle"   class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">1</span>Microsoft Bundle</a>
+  <a href="#laptops"  class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">2</span>Laptop Overview</a>
+  <a href="#specs"    class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">3</span>Full Spec Table</a>
+  <a href="#mis"      class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">4</span>MIS Usability</a>
+  <a href="#gaming"   class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">5</span>Gaming & Steam Deck</a>
+  <a href="#cost"     class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">6</span>Real Cost After Bundle</a>
+  <a href="#upgrades" class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">7</span>Upgradability</a>
+  <a href="#charging" class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">8</span>How Each Laptop Charges</a>
+  <a href="#reviews"  class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">9</span>Review Summary</a>
+  <a href="#ratings"  class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">10</span>Ratings</a>
+  <a href="#verdict"  class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">11</span>Final Verdict</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Laptop Buying Guide · 2025–2026 · Prices Updated</div>
+    <h1>Four-Way Laptop Comparison<br><em>Updated with current Best Buy pricing</em></h1>
+    <p class="hero-desc">A complete guide for an MIS graduate and PC gamer with a Steam Deck LCD — covering specs, MIS career usability, gaming, Microsoft Ultimate College Bundle savings, and a definitive verdict.</p>
+    <div class="hero-chips">
+      <span class="chip">HP Notebook 14 (2020) — Current</span>
+      <span class="chip">ASUS Vivobook S14 — Option A</span>
+      <span class="chip">HP OmniBook Flip Ultra 5 — Option B ⚠</span>
+      <span class="chip">HP OmniBook Flip Ultra 7 — Option C ★</span>
+      <span class="chip">Microsoft Bundle $639.86</span>
+      <span class="chip">Steam Deck LCD</span>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" class="main">
+
+<!-- ══════════════════════ SECTION 1: BUNDLE ══════════════════════ -->
+<section class="section reveal" id="bundle">
+  <div class="section-header"><div class="section-num">1</div><h2>Microsoft Ultimate College Bundle</h2></div>
+  <p>Eligible U.S. college students who purchase a qualifying new Windows 11 PC before <strong>June 30, 2026</strong> receive the following free. Needs a valid <code>.edu</code> email. New subscribers only.</p>
+  <div class="bundle-grid">
+    <div class="metric"><div class="m-lbl">Microsoft 365 Premium</div><div class="m-val">$199.99</div><div class="m-sub">1 yr · Word, Excel, PowerPoint + Copilot AI</div></div>
+    <div class="metric"><div class="m-lbl">Xbox Game Pass Ultimate</div><div class="m-val">$359.88</div><div class="m-sub">1 yr · $29.99/mo · 500+ games + PC Game Pass</div></div>
+    <div class="metric"><div class="m-lbl">Xbox Design Lab Controller</div><div class="m-val">$79.99</div><div class="m-sub">Custom colors · works with PC gaming + Steam Deck</div></div>
+    <div class="metric total"><div class="m-lbl">Total bundle value</div><div class="m-val">$639.86</div><div class="m-sub">Free with qualifying new Windows 11 PC</div></div>
+  </div>
+  <div class="notice n-sage"><span class="n-icon">✓</span><span>All three new laptop options run standard x86 Windows — Game Pass works fully on all of them. New subscribers receive the full $639.86 in value.</span></div>
+  <div class="notice n-amber"><span class="n-icon">!</span><span>Only for <strong>new</strong> Game Pass and <strong>new</strong> Microsoft 365 subscribers. Many colleges include M365 through tuition — check before assuming the full savings.</span></div>
+  <div class="notice n-slate"><span class="n-icon">🎮</span><span>The Xbox Design Lab controller from the bundle works for PC gaming on any laptop and pairs via Bluetooth with your Steam Deck LCD when docked.</span></div>
+</section>
+
+<!-- ══════════════════════ SECTION 2: LAPTOPS ══════════════════════ -->
+<section class="section reveal" id="laptops">
+  <div class="section-header"><div class="section-num">2</div><h2>Laptop Overview &amp; Pricing</h2></div>
+  <div class="notice n-amber" style="margin-bottom:14px;"><span class="n-icon">⟳</span><span><strong>Price updated (Best Buy SKU 6613868):</strong> HP OmniBook X Flip Ultra 5 is currently <strong>$949.99 MSRP</strong> — up from the ~$499–$599 sale price. Open Box: $697.99–$949.99.</span></div>
+
+  <div class="laptop-grid">
+    <!-- CURRENT HP -->
+    <div class="lcard cur">
+      <span class="card-badge b-gray">Your current laptop</span>
+      <div class="cname">HP Notebook 14-dq1043cl</div><div class="csub">2020 · Intel Core i3 · #1V782UA</div>
+      <div class="cprice">$529</div><div class="cprice-sub">Paid off · not bundle-eligible</div>
+      <div class="sdiv">Specs</div>
+      <div class="sr"><span class="sl">CPU</span><span class="sv r">i3-1005G1 · 2-core</span></div>
+      <div class="sr"><span class="sl">RAM</span><span class="sv r">8 GB DDR4 (soldered)</span></div>
+      <div class="sr"><span class="sl">Storage</span><span class="sv r">256 GB PCIe SSD</span></div>
+      <div class="sr"><span class="sl">Display</span><span class="sv r">14" IPS 1080p, no touch</span></div>
+      <div class="sr"><span class="sl">Battery</span><span class="sv r">~41 Wh · now 3–5 hrs</span></div>
+      <div class="sr"><span class="sl">Wi-Fi</span><span class="sv r">Wi-Fi 5</span></div>
+      <div class="sr"><span class="sl">Thunderbolt</span><span class="sv r">No</span></div>
+      <div class="sr"><span class="sl">Charging</span><span class="sv r">Barrel connector only</span></div>
+      <div class="sdiv">Cons</div>
+      <ul class="pcl">
+        <li><em class="ico con">✗</em>2-core CPU — lags with SQL + browser + Zoom</li>
+        <li><em class="ico con">✗</em>8 GB RAM — not enough for MIS</li>
+        <li><em class="ico con">✗</em>256 GB — likely nearly full</li>
+        <li><em class="ico con">✗</em>Battery degraded to ~3–5 hrs</li>
+        <li><em class="ico con">✗</em>No PC gaming capability</li>
+      </ul>
+      <div class="tags"><span class="tag t-coral">No gaming</span><span class="tag t-coral">No bundle</span></div>
+    </div>
+
+    <!-- ASUS VIVOBOOK -->
+    <div class="lcard">
+      <span class="card-badge b-slate">Option A</span>
+      <div class="cname">ASUS Vivobook S 14 OLED</div><div class="csub">S5406SA-WH79 · Core Ultra 7 258V · Black</div>
+      <div class="cprice">~$799–$957</div>
+      <div class="cprice-eff">~$159–$317 after bundle</div>
+      <div class="cprice-sub">Best price: Walmart ~$799–$865</div>
+      <div class="sdiv">Specs</div>
+      <div class="sr"><span class="sl">CPU</span><span class="sv g">Core Ultra 7 258V · 8-core · 4.8 GHz</span></div>
+      <div class="sr"><span class="sl">RAM</span><span class="sv g">32 GB LPDDR5X (soldered)</span></div>
+      <div class="sr"><span class="sl">Storage</span><span class="sv g">1 TB PCIe Gen 4 SSD</span></div>
+      <div class="sr"><span class="sl">Display</span><span class="sv g">14" OLED 1920×1200 · no touch</span></div>
+      <div class="sr"><span class="sl">Battery</span><span class="sv g">75 Wh · 16–17 hrs</span></div>
+      <div class="sr"><span class="sl">Wi-Fi</span><span class="sv g">Wi-Fi 7 · BT 5.4</span></div>
+      <div class="sr"><span class="sl">Thunderbolt</span><span class="sv g">TB4 ×2 + USB-A ×2 + HDMI</span></div>
+      <div class="sr"><span class="sl">Charging</span><span class="sv g">USB-C PD · either TB4 port · 65W incl.</span></div>
+      <div class="sdiv">Pros</div>
+      <ul class="pcl">
+        <li><em class="ico pro">+</em>32 GB RAM — best MIS multitasking</li>
+        <li><em class="ico pro">+</em>1 TB storage included</li>
+        <li><em class="ico pro">+</em>OLED display — 600 nits, 100% DCI-P3</li>
+        <li><em class="ico pro">+</em>Wi-Fi 7 + MIL-STD 810H + iF Design Award</li>
+        <li><em class="ico pro">+</em>Charge from either side — most flexible</li>
+      </ul>
+      <div class="sdiv">Cons</div>
+      <ul class="pcl">
+        <li><em class="ico con">✗</em>No touchscreen or flip modes</li>
+        <li><em class="ico con">✗</em>Glossy screen — reflections in bright rooms</li>
+        <li><em class="ico con">✗</em>Buy at Walmart, not Amazon ($957)</li>
+      </ul>
+      <div class="tags"><span class="tag t-sage">32 GB RAM</span><span class="tag t-sage">1 TB SSD</span><span class="tag t-slate">No Touch</span></div>
+    </div>
+
+    <!-- HP ULTRA 5 -->
+    <div class="lcard cau">
+      <span class="card-badge b-amber">Option B · ⚠ Price Alert</span>
+      <div class="cname">HP OmniBook X Flip 14</div><div class="csub">14-fm0013dx · Core Ultra 5 226V · Atm. Blue</div>
+      <div class="price-upd">⟳ Updated — Best Buy SKU 6613868</div>
+      <div class="cprice">$949.99 MSRP</div>
+      <div class="cprice-eff warn">~$310 after bundle at MSRP</div>
+      <div class="cprice-sub">Open Box: $697.99 · Was on sale ~$499–$599</div>
+      <div class="sdiv">Specs</div>
+      <div class="sr"><span class="sl">CPU</span><span class="sv a">Core Ultra 5 226V · 8-core · 4.5 GHz</span></div>
+      <div class="sr"><span class="sl">RAM</span><span class="sv a">16 GB LPDDR5 (soldered)</span></div>
+      <div class="sr"><span class="sl">Storage</span><span class="sv a">512 GB NVMe SSD</span></div>
+      <div class="sr"><span class="sl">Display</span><span class="sv a">14" IPS 1920×1200 · touch · 400 nits</span></div>
+      <div class="sr"><span class="sl">Battery</span><span class="sv g">68 Wh · 10–18 hrs</span></div>
+      <div class="sr"><span class="sl">Wi-Fi</span><span class="sv g">Wi-Fi 6E · BT 5.3</span></div>
+      <div class="sr"><span class="sl">Thunderbolt</span><span class="sv g">TB4 + USB-C + USB-A ×2 + HDMI</span></div>
+      <div class="sr"><span class="sl">Charging</span><span class="sv a">USB-C PD · TB4 port only · 65W · quirks &gt;65W</span></div>
+      <div class="sdiv">At $949.99 — poor value</div>
+      <ul class="pcl">
+        <li><em class="ico con">✗</em>Weaker CPU and GPU than ASUS at same price</li>
+        <li><em class="ico con">✗</em>Half the RAM (16 vs 32 GB)</li>
+        <li><em class="ico con">✗</em>Half the storage (512 GB vs 1 TB)</li>
+        <li><em class="ico con">✗</em>IPS vs OLED</li>
+      </ul>
+      <div class="tags"><span class="tag t-coral">Avoid at MSRP</span><span class="tag t-amber">OK at ≤$599</span><span class="tag t-sage">Open Box $697</span></div>
+    </div>
+
+    <!-- HP ULTRA 7 -->
+    <div class="lcard rec">
+      <span class="card-badge b-sage">Option C · ★ Recommended</span>
+      <div class="cname">HP OmniBook X Flip 14</div><div class="csub">14-fm0047nr · Core Ultra 7 256V · Glacial Silver</div>
+      <div class="cprice">~$699–$849</div>
+      <div class="cprice-eff">~$59–$209 after bundle</div>
+      <div class="cprice-sub">HP.com / Walmart · Better CPU &amp; GPU than Option B</div>
+      <div class="sdiv">Specs</div>
+      <div class="sr"><span class="sl">CPU</span><span class="sv g">Core Ultra 7 256V · 8-core · 4.8 GHz</span></div>
+      <div class="sr"><span class="sl">RAM</span><span class="sv a">16 GB LPDDR5X (soldered)</span></div>
+      <div class="sr"><span class="sl">Storage</span><span class="sv a">512 GB NVMe SSD</span></div>
+      <div class="sr"><span class="sl">Display</span><span class="sv a">14" IPS 1920×1200 · touch · 400 nits</span></div>
+      <div class="sr"><span class="sl">Battery</span><span class="sv g">68 Wh · 10–12 hrs</span></div>
+      <div class="sr"><span class="sl">Wi-Fi</span><span class="sv g">Wi-Fi 6E · BT 5.3</span></div>
+      <div class="sr"><span class="sl">Thunderbolt</span><span class="sv g">TB4 + USB-C + USB-A ×2 + HDMI</span></div>
+      <div class="sr"><span class="sl">Charging</span><span class="sv a">USB-C PD · TB4 port only · 65W · same quirks as B</span></div>
+      <div class="sdiv">Pros</div>
+      <ul class="pcl">
+        <li><em class="ico pro">+</em>Stronger Ultra 7 CPU — faster than B's Ultra 5</li>
+        <li><em class="ico pro">+</em>Arc 140V GPU — better gaming than B's Arc 130V</li>
+        <li><em class="ico pro">+</em>Touchscreen + 4-mode flip</li>
+        <li><em class="ico pro">+</em>Thunderbolt 4 dock support</li>
+        <li><em class="ico pro">+</em>All MIS enterprise apps work — x86 Windows</li>
+      </ul>
+      <div class="sdiv">Cons</div>
+      <ul class="pcl">
+        <li><em class="ico con">✗</em>Only 16 GB RAM vs ASUS's 32 GB</li>
+        <li><em class="ico con">✗</em>IPS not OLED</li>
+        <li><em class="ico con">✗</em>Mushy trackpad</li>
+      </ul>
+      <div class="tags"><span class="tag t-sage">Best CPU+GPU flip combo</span><span class="tag t-sage">~$59–$209 after bundle</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SECTION 3: FULL SPECS ══════════════════════ -->
+<section class="section reveal" id="specs">
+  <div class="section-header"><div class="section-num">3</div><h2>Full Spec Comparison</h2></div>
+  <div class="tw"><table>
+    <thead><tr><th>Specification</th><th>Your HP (2020)</th><th>ASUS Vivobook S14 (A)</th><th>HP Flip Ultra 5 (B)</th><th>HP Flip Ultra 7 (C) ★</th></tr></thead>
+    <tbody>
+      <tr><td>Price (after bundle)</td><td>$529 paid off</td><td>~$799–$957 · ~$159–$317 after</td><td class="bd">$949.99 · ~$310 after — poor value</td><td class="hs gd">~$699–$849 · ~$59–$209 after</td></tr>
+      <tr><td>CPU</td><td class="bd">i3-1005G1 · 2-core</td><td class="gd">Core Ultra 7 258V · 8c · 4.8 GHz</td><td class="ok">Core Ultra 5 226V · 8c · 4.5 GHz</td><td class="hs gd">Core Ultra 7 256V · 8c · 4.8 GHz</td></tr>
+      <tr><td>RAM</td><td class="bd">8 GB (soldered)</td><td class="gd">32 GB LPDDR5X — best</td><td class="ok">16 GB LPDDR5</td><td class="hs ok">16 GB LPDDR5X</td></tr>
+      <tr><td>Storage</td><td class="bd">256 GB (likely full)</td><td class="gd">1 TB PCIe Gen 4 — best</td><td class="ok">512 GB PCIe Gen 4</td><td class="hs ok">512 GB PCIe Gen 4</td></tr>
+      <tr><td>Display</td><td class="bd">14" IPS 1080p · no touch</td><td class="gd">14" OLED 1920×1200 · no touch</td><td class="ok">14" IPS 1920×1200 · touch</td><td class="hs ok">14" IPS 1920×1200 · touch</td></tr>
+      <tr><td>GPU</td><td class="bd">Intel UHD (basic)</td><td class="gd">Intel Arc 140V</td><td class="ok">Intel Arc 130V (8 GB)</td><td class="hs gd">Intel Arc 140V (8 GB)</td></tr>
+      <tr><td>Weight</td><td>~3.75 lbs</td><td class="gd">~2.87 lbs — lightest</td><td class="ok">~3.3 lbs</td><td class="hs gd">~3.1 lbs</td></tr>
+      <tr><td>Battery</td><td class="bd">~41 Wh · now ~3–5 hrs</td><td class="gd">75 Wh · 16–17 hrs</td><td class="gd">68 Wh · 10–18 hrs</td><td class="hs gd">68 Wh · 10–12 hrs</td></tr>
+      <tr><td>Wi-Fi</td><td class="bd">Wi-Fi 5 · BT 5.0</td><td class="gd">Wi-Fi 7 · BT 5.4 — best</td><td class="gd">Wi-Fi 6E · BT 5.3</td><td class="hs gd">Wi-Fi 6E · BT 5.3</td></tr>
+      <tr><td>Touchscreen / Flip</td><td class="bd">No</td><td class="bd">No</td><td class="gd">Yes · 4-mode flip</td><td class="hs gd">Yes · 4-mode flip</td></tr>
+      <tr><td>Thunderbolt</td><td class="bd">No</td><td class="gd">TB4 ×2 + USB-A ×2 + HDMI</td><td class="gd">TB4 + USB-C + USB-A ×2 + HDMI</td><td class="hs gd">TB4 + USB-C + USB-A ×2 + HDMI</td></tr>
+      <tr><td>Charging</td><td class="bd">Barrel only — proprietary</td><td class="gd">USB-C PD · both TB4 ports · 65W · no quirks</td><td class="ok">USB-C PD · TB4 port only · 65W · firmware quirks &gt;65W</td><td class="hs ok">USB-C PD · TB4 port only · 65W · same quirks</td></tr>
+      <tr><td>OS</td><td>Windows 11 x86</td><td class="gd">Windows 11 Home x86 ✓</td><td class="gd">Windows 11 Home x86 ✓</td><td class="hs gd">Windows 11 Home x86 ✓</td></tr>
+      <tr><td>MIS enterprise apps</td><td class="ok">Limited — too slow</td><td class="gd">Fully compatible</td><td class="gd">Fully compatible</td><td class="hs gd">Fully compatible</td></tr>
+      <tr><td>Game Pass / gaming</td><td class="bd">Cannot run</td><td class="gd">Arc 140V — runs well</td><td class="ok">Arc 130V — runs most</td><td class="hs gd">Arc 140V — best of three</td></tr>
+      <tr><td>SSD upgradeable</td><td class="bd">Not recommended</td><td class="gd">Yes — M.2 NVMe slot</td><td class="gd">Yes — M.2 NVMe slot</td><td class="hs gd">Yes — confirmed by Tom's Hardware</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ══════════════════════ SECTION 4: MIS ══════════════════════ -->
+<section class="section reveal" id="mis">
+  <div class="section-header"><div class="section-num">4</div><h2>MIS Career Usability</h2></div>
+  <div class="tw"><table>
+    <thead><tr><th>Scenario</th><th>Your HP</th><th>ASUS S14 (A)</th><th>HP Flip Ultra 5 (B)</th><th>HP Flip Ultra 7 (C) ★</th></tr></thead>
+    <tbody>
+      <tr><td>SQL Server / databases</td><td class="bd">Too slow</td><td class="gd">Excellent — 32 GB</td><td class="ok">Fine — 16 GB</td><td class="hs gd">Excellent — faster CPU</td></tr>
+      <tr><td>Excel + Power BI + Zoom</td><td class="bd">Struggles</td><td class="gd">Best — 32 GB, no lag</td><td class="ok">Handles it</td><td class="hs gd">Handles it well</td></tr>
+      <tr><td>SAP / Oracle ERP</td><td class="bd">Too slow</td><td class="gd">Fully compatible, x86</td><td class="gd">Fully compatible, x86</td><td class="hs gd">Fully compatible, x86</td></tr>
+      <tr><td>Company VPN + IT tools</td><td class="ok">Slow</td><td class="gd">Works — x86 Windows</td><td class="gd">Works — x86 Windows</td><td class="hs gd">Works — x86 Windows</td></tr>
+      <tr><td>Office docking station</td><td class="bd">No Thunderbolt</td><td class="gd">TB4 ×2 — ideal</td><td class="gd">TB4 — works great</td><td class="hs gd">TB4 — works great</td></tr>
+      <tr><td>Tablet / annotating docs</td><td class="bd">No touchscreen</td><td class="bd">No touchscreen</td><td class="gd">Yes — touchscreen</td><td class="hs gd">Yes — touchscreen</td></tr>
+      <tr><td>Client presentations</td><td class="ok">OK for basic</td><td class="ok">OLED stunning; no flip</td><td class="gd">Tent/tablet mode</td><td class="hs gd">Tent/tablet mode</td></tr>
+      <tr><td>Future-proof RAM</td><td class="bd">8 GB — limited</td><td class="gd">32 GB — very future-proof</td><td class="ok">16 GB — adequate now</td><td class="hs ok">16 GB — adequate now</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ══════════════════════ SECTION 5: GAMING ══════════════════════ -->
+<section class="section reveal" id="gaming">
+  <div class="section-header"><div class="section-num">5</div><h2>PC Gaming &amp; Steam Deck LCD</h2></div>
+  <p>Your Steam Deck LCD handles serious gaming. The question is how well each laptop complements it and whether the free Game Pass subscription will actually be usable.</p>
+  <div class="tw" style="margin-top:14px;"><table>
+    <thead><tr><th>Gaming Scenario</th><th>Your HP</th><th>ASUS S14 (A)</th><th>HP Flip Ultra 5 (B)</th><th>HP Flip Ultra 7 (C) ★</th></tr></thead>
+    <tbody>
+      <tr><td>PC Game Pass library</td><td class="bd">Cannot run</td><td class="gd">Arc 140V — runs well</td><td class="ok">Arc 130V — runs most</td><td class="hs gd">Arc 140V — best of three</td></tr>
+      <tr><td>Indie / lighter Steam games</td><td class="bd">Cannot run</td><td class="gd">Runs at good settings</td><td class="ok">Runs at medium</td><td class="hs gd">Runs at medium-high</td></tr>
+      <tr><td>AAA / demanding titles</td><td class="bd">Cannot run</td><td class="ok">Low settings possible</td><td class="ok">Low settings only</td><td class="hs ok">Low–medium settings</td></tr>
+      <tr><td>Cloud gaming via Game Pass</td><td class="bd">Too slow</td><td class="gd">Works well</td><td class="gd">Works well</td><td class="hs gd">Works well</td></tr>
+      <tr><td>Xbox controller (bundle)</td><td>Basic</td><td class="gd">Fully useful</td><td class="gd">Fully useful</td><td class="hs gd">Fully useful — best GPU</td></tr>
+      <tr><td>Complements Steam Deck</td><td>Deck only</td><td class="gd">Deck portable; laptop = desk</td><td class="gd">Deck portable; laptop = desk</td><td class="hs gd">Best desk gaming of three</td></tr>
+    </tbody>
+  </table></div>
+  <div class="notice n-slate" style="margin-top:12px;"><span class="n-icon">🎮</span><span>One 65W+ USB-C GaN charger powers your laptop AND Steam Deck LCD — fewer bricks in your bag.</span></div>
+</section>
+
+<!-- ══════════════════════ SECTION 6: COST ══════════════════════ -->
+<section class="section reveal" id="cost">
+  <div class="section-header"><div class="section-num">6</div><h2>Real Cost After Microsoft Bundle</h2></div>
+  <div class="notice n-coral"><span class="n-icon">!</span><span><strong>Key change:</strong> At $949.99 MSRP, Option B is no longer nearly free after the bundle. It now costs ~$310 and delivers weaker specs than the ASUS at a similar price. Do not buy Option B at current MSRP.</span></div>
+  <div class="cg" style="margin-top:14px;">
+    <div class="cc"><div class="cc-lbl">Keep Current HP</div><div class="cc-val">$0 + ~$560/yr</div><div class="cc-note">Still need M365 + Game Pass annually. Too slow for MIS.</div></div>
+    <div class="cc win"><div class="cc-lbl">ASUS S14 (A) — Now stronger vs. B</div><div class="cc-val">~$159–$317</div><div class="cc-note">Walmart ~$799–$865 minus bundle. Better specs than B at similar price.</div></div>
+    <div class="cc cau-c"><div class="cc-lbl">HP Flip Ultra 5 (B) — Avoid at MSRP</div><div class="cc-val">~$310 MSRP</div><div class="cc-note">$949.99 minus bundle. Same price as ASUS but worse specs. Only buy ≤$599 or Open Box $697.</div></div>
+    <div class="cc win"><div class="cc-lbl">HP Flip Ultra 7 (C) ★ Best overall</div><div class="cc-val">~$59–$209</div><div class="cc-note">~$699–$849 minus bundle. Better CPU + GPU than B, same flip. Best all-around deal.</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SECTION 7: UPGRADES ══════════════════════ -->
+<section class="section reveal" id="upgrades">
+  <div class="section-header"><div class="section-num">7</div><h2>Upgradability</h2></div>
+  <div class="tw"><table>
+    <thead><tr><th>Component</th><th>Your HP (2020)</th><th>ASUS S14 (A)</th><th>HP Flip Ultra 5 (B)</th><th>HP Flip Ultra 7 (C)</th></tr></thead>
+    <tbody>
+      <tr><td>SSD</td><td class="bd">HP marks it not user-accessible. Don't attempt.</td><td class="gd">User-replaceable M.2 NVMe. Medium difficulty.</td><td class="gd">NVMe M.2 accessible. Beginner-friendly with Torx T5 guide.</td><td class="hs gd">Same as B. Tom's Hardware confirmed: 3 screws + pry tool.</td></tr>
+      <tr><td>RAM</td><td class="bd">Soldered — 8 GB forever</td><td class="ok">Soldered — 32 GB (can't upgrade, but great)</td><td class="bd">Soldered — 16 GB forever</td><td class="hs bd">Soldered — 16 GB forever</td></tr>
+      <tr><td>Wi-Fi card</td><td class="bd">Not replaceable</td><td class="gd">Accessible after opening back</td><td class="ok">Accessible — partially covered by heat shield</td><td class="hs ok">Same as B</td></tr>
+      <tr><td>Difficulty</td><td class="bd">Don't attempt</td><td class="ok">Medium — careful disassembly</td><td class="gd">Beginner-friendly with a guide</td><td class="hs gd">Beginner-friendly with a guide</td></tr>
+      <tr><td>Recommended SSD</td><td>N/A</td><td colspan="3" class="hs"><strong>Samsung 990 Evo</strong> or <strong>WD Black SN770</strong> · PCIe Gen 4 NVMe M.2 2280 · ~$60–$100 for 1 TB. Search iFixit.com or YouTube for your model teardown first. Tools: Phillips screwdriver + plastic pry tool.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ══════════════════════ SECTION 8: CHARGING ══════════════════════ -->
+<section class="section reveal" id="charging">
+  <div class="section-header"><div class="section-num">8</div><h2>How Each Laptop Charges</h2></div>
+  <p>Charging method affects daily life more than most specs. USB-C means one cable handles phone, laptop, and power bank. Barrel-only means carrying a dedicated brick everywhere.</p>
+  <div class="tw" style="margin-top:14px;"><table>
+    <thead><tr><th>Charging Factor</th><th>Your HP (2020)</th><th>ASUS S14 (A)</th><th>HP Flip Ultra 5 (B)</th><th>HP Flip Ultra 7 (C) ★</th></tr></thead>
+    <tbody>
+      <tr><td>Connector type</td><td class="bd">4.5mm barrel — proprietary</td><td class="gd">USB-C Thunderbolt 4 — universal</td><td class="gd">USB-C Thunderbolt 4 — universal</td><td class="hs gd">USB-C Thunderbolt 4 — universal</td></tr>
+      <tr><td>Included wattage</td><td class="bd">~45W — slow</td><td class="gd">65W — fast</td><td class="gd">65W — fast</td><td class="hs gd">65W — fast</td></tr>
+      <tr><td>Which ports charge it</td><td class="bd">Barrel port only</td><td class="gd">Either TB4 port — left or right side</td><td class="ok">TB4 port only (rear-left) — one side</td><td class="hs ok">TB4 port only (rear-left) — one side</td></tr>
+      <tr><td>USB-C power bank</td><td class="bd">No</td><td class="gd">Yes — any 45W+ PD bank</td><td class="gd">Yes — 45W+ PD bank</td><td class="hs gd">Yes — 45W+ PD bank</td></tr>
+      <tr><td>Airport USB-C outlet</td><td class="bd">Cannot use</td><td class="gd">Yes — any wattage</td><td class="gd">Yes — slower at low wattage</td><td class="hs gd">Yes — slower at low wattage</td></tr>
+      <tr><td>Dock charges simultaneously</td><td class="bd">No docking</td><td class="gd">Yes — TB4 dock: power + display + USB</td><td class="gd">Yes — TB4 dock charges while in use</td><td class="hs gd">Yes — TB4 dock charges while in use</td></tr>
+      <tr><td>3rd-party charger compat.</td><td class="ok">Generic HP barrel (~$20)</td><td class="gd">Any 65W+ USB-C PD — no issues</td><td class="ok">Works but &gt;65W may show "weak charger" warning</td><td class="hs ok">Same as Option B</td></tr>
+      <tr><td>Shares cable with Steam Deck</td><td class="bd">No</td><td class="gd">Yes — both use USB-C PD</td><td class="gd">Yes — both use USB-C PD</td><td class="hs gd">Yes — both use USB-C PD</td></tr>
+      <tr><td>Convenience rating</td><td class="bd">2/10 — barrel, proprietary</td><td class="gd">9/10 — both sides, universal, no quirks</td><td class="ok">7/10 — USB-C but one port, firmware quirks</td><td class="hs ok">7/10 — same as Option B</td></tr>
+    </tbody>
+  </table></div>
+  <div class="notice n-slate" style="margin-top:12px;"><span class="n-icon">🔌</span><span><strong>Steam Deck + laptop tip:</strong> One quality 65W GaN USB-C wall charger (~$25) powers both your laptop and Steam Deck LCD. The ASUS is most flexible — either Thunderbolt 4 port works, no guessing.</span></div>
+</section>
+
+<!-- ══════════════════════ SECTION 9: REVIEWS ══════════════════════ -->
+<section class="section reveal" id="reviews">
+  <div class="section-header"><div class="section-num">9</div><h2>Review Summary</h2></div>
+  <div class="two-col">
+    <div>
+      <h3>ASUS Vivobook S 14 OLED</h3>
+      <h4>What reviewers praise</h4>
+      <ul class="pcl">
+        <li><em class="ico pro">+</em>Called "a great value at $799" — standout specs at the price</li>
+        <li><em class="ico pro">+</em>OLED praised as "well-calibrated," "vibrant," "surprisingly bright"</li>
+        <li><em class="ico pro">+</em>32 GB handles everything without lag</li>
+        <li><em class="ico pro">+</em>Wi-Fi 7, MIL-STD 810H, RGB keyboard, iF Design Award 2025</li>
+        <li><em class="ico pro">+</em>"Good almost everywhere, fundamentally bad nowhere"</li>
+      </ul>
+      <h4>What reviewers criticize</h4>
+      <ul class="pcl">
+        <li><em class="ico con">✗</em>No touchscreen — biggest complaint vs. flip competitors</li>
+        <li><em class="ico con">✗</em>RAM and storage cannot be upgraded later</li>
+        <li><em class="ico con">✗</em>60 Hz OLED; glossy screen has outdoor reflections</li>
+      </ul>
+    </div>
+    <div>
+      <h3>HP OmniBook X Flip 14 (Both Models)</h3>
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">⭐ 4.7/5 · 939+ reviews at Best Buy (SKU 6613868)</p>
+      <h4>What reviewers praise</h4>
+      <ul class="pcl">
+        <li><em class="ico pro">+</em>Tom's Guide: "mightily enticing for students and professionals"</li>
+        <li><em class="ico pro">+</em>Touchscreen and flip modes genuinely useful in tablet and tent modes</li>
+        <li><em class="ico pro">+</em>Nearly 18 hrs battery in light-use testing (Ultra 5 model)</li>
+        <li><em class="ico pro">+</em>Port selection praised — rarely need a dongle</li>
+        <li><em class="ico pro">+</em>Ultra 7 model beat Lenovo Yoga 9i in Geekbench 6 (Tom's Hardware)</li>
+      </ul>
+      <h4>What reviewers criticize</h4>
+      <ul class="pcl">
+        <li><em class="ico con">✗</em>Trackpad mushy — the single most consistent complaint</li>
+        <li><em class="ico con">✗</em>Some keyboard flex under heavy typing</li>
+        <li><em class="ico con">✗</em>HP inflates MSRPs — never buy at full retail</li>
+        <li><em class="ico con">✗</em>Ultra 7 runs hot under sustained heavy workloads</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SECTION 10: RATINGS ══════════════════════ -->
+<section class="section reveal" id="ratings">
+  <div class="section-header"><div class="section-num">10</div><h2>Ratings — MIS Grad + PC Gamer + Steam Deck LCD</h2></div>
+  <div class="rg">
+    <div>
+      <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:8px;">Your HP (2020)</div>
+      <div class="rb"><span class="rl">CPU performance</span><div class="rt"><div class="rf" style="width:20%;background:#888780"></div></div><span class="rs">2/10</span></div>
+      <div class="rb"><span class="rl">Battery now</span><div class="rt"><div class="rf" style="width:20%;background:#888780"></div></div><span class="rs">2/10</span></div>
+      <div class="rb"><span class="rl">Display quality</span><div class="rt"><div class="rf" style="width:35%;background:#888780"></div></div><span class="rs">3.5/10</span></div>
+      <div class="rb"><span class="rl">MIS app support</span><div class="rt"><div class="rf" style="width:50%;background:#888780"></div></div><span class="rs">5/10</span></div>
+      <div class="rb"><span class="rl">Gaming / Game Pass</span><div class="rt"><div class="rf" style="width:5%;background:#888780"></div></div><span class="rs">1/10</span></div>
+      <div class="rb"><span class="rl">Charging flexibility</span><div class="rt"><div class="rf" style="width:20%;background:#888780"></div></div><span class="rs">2/10</span></div>
+      <div class="rb"><span class="rl">Value today</span><div class="rt"><div class="rf" style="width:10%;background:#888780"></div></div><span class="rs">1/10</span></div>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;color:var(--slate);margin-bottom:8px;">ASUS Vivobook S14 (A)</div>
+      <div class="rb"><span class="rl">CPU performance</span><div class="rt"><div class="rf" style="width:90%;background:var(--slate)"></div></div><span class="rs">9/10</span></div>
+      <div class="rb"><span class="rl">Battery</span><div class="rt"><div class="rf" style="width:85%;background:var(--slate)"></div></div><span class="rs">8.5/10</span></div>
+      <div class="rb"><span class="rl">Display quality</span><div class="rt"><div class="rf" style="width:90%;background:var(--slate)"></div></div><span class="rs">9/10</span></div>
+      <div class="rb"><span class="rl">MIS app support</span><div class="rt"><div class="rf" style="width:95%;background:var(--slate)"></div></div><span class="rs">9.5/10</span></div>
+      <div class="rb"><span class="rl">Gaming / Game Pass</span><div class="rt"><div class="rf" style="width:60%;background:var(--slate)"></div></div><span class="rs">6/10</span></div>
+      <div class="rb"><span class="rl">Charging flexibility</span><div class="rt"><div class="rf" style="width:90%;background:var(--slate)"></div></div><span class="rs">9/10</span></div>
+      <div class="rb"><span class="rl">Value (after bundle)</span><div class="rt"><div class="rf" style="width:85%;background:var(--slate)"></div></div><span class="rs">8.5/10</span></div>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;color:var(--amber);margin-bottom:8px;">HP Flip Ultra 5 (B) — at MSRP</div>
+      <div class="rb"><span class="rl">CPU performance</span><div class="rt"><div class="rf" style="width:75%;background:var(--amber)"></div></div><span class="rs">7.5/10</span></div>
+      <div class="rb"><span class="rl">Battery</span><div class="rt"><div class="rf" style="width:80%;background:var(--amber)"></div></div><span class="rs">8/10</span></div>
+      <div class="rb"><span class="rl">Display quality</span><div class="rt"><div class="rf" style="width:65%;background:var(--amber)"></div></div><span class="rs">6.5/10</span></div>
+      <div class="rb"><span class="rl">MIS app support</span><div class="rt"><div class="rf" style="width:100%;background:var(--amber)"></div></div><span class="rs">10/10</span></div>
+      <div class="rb"><span class="rl">Gaming / Game Pass</span><div class="rt"><div class="rf" style="width:55%;background:var(--amber)"></div></div><span class="rs">5.5/10</span></div>
+      <div class="rb"><span class="rl">Charging flexibility</span><div class="rt"><div class="rf" style="width:70%;background:var(--amber)"></div></div><span class="rs">7/10</span></div>
+      <div class="rb"><span class="rl">Value at $949.99</span><div class="rt"><div class="rf" style="width:30%;background:var(--coral)"></div></div><span class="rs" style="color:var(--coral)">3/10</span></div>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;color:var(--sage-dark);margin-bottom:8px;">HP Flip Ultra 7 (C) ★</div>
+      <div class="rb"><span class="rl">CPU performance</span><div class="rt"><div class="rf" style="width:85%;background:var(--sage)"></div></div><span class="rs">8.5/10</span></div>
+      <div class="rb"><span class="rl">Battery</span><div class="rt"><div class="rf" style="width:75%;background:var(--sage)"></div></div><span class="rs">7.5/10</span></div>
+      <div class="rb"><span class="rl">Display quality</span><div class="rt"><div class="rf" style="width:65%;background:var(--sage)"></div></div><span class="rs">6.5/10</span></div>
+      <div class="rb"><span class="rl">MIS app support</span><div class="rt"><div class="rf" style="width:100%;background:var(--sage)"></div></div><span class="rs">10/10</span></div>
+      <div class="rb"><span class="rl">Gaming / Game Pass</span><div class="rt"><div class="rf" style="width:65%;background:var(--sage)"></div></div><span class="rs">6.5/10</span></div>
+      <div class="rb"><span class="rl">Charging flexibility</span><div class="rt"><div class="rf" style="width:70%;background:var(--sage)"></div></div><span class="rs">7/10</span></div>
+      <div class="rb"><span class="rl">Value (after bundle)</span><div class="rt"><div class="rf" style="width:90%;background:var(--sage)"></div></div><span class="rs">9/10</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SECTION 11: VERDICT ══════════════════════ -->
+<section class="section reveal" id="verdict">
+  <div class="section-header"><div class="section-num">11</div><h2>Final Verdict</h2></div>
+  <div class="vg">
+    <div class="vbox vsl">
+      <h3 style="color:var(--slate);">Option A: ASUS Vivobook S14<br><small style="font-size:13px;font-weight:400;">Best specs per dollar · now stronger than B at MSRP</small></h3>
+      <p>With Option B now at $949.99 MSRP, the ASUS at ~$799–$865 on Walmart makes more sense than ever. You get 32 GB RAM, 1 TB SSD, an OLED display, and the fastest CPU in this comparison — for less money than Option B. Best if you don't need a touchscreen and work with large datasets or multiple VMs. Buy at Walmart, not Amazon.</p>
+      <div class="tags" style="margin-top:10px;"><span class="tag t-sage">Best specs per $</span><span class="tag t-sage">32 GB RAM</span><span class="tag t-slate">No touch/flip</span></div>
+    </div>
+    <div class="vbox vc">
+      <h3 style="color:var(--coral);">Option B: HP Flip Ultra 5<br><small style="font-size:13px;font-weight:400;">Do NOT buy at $949.99 MSRP</small></h3>
+      <p>At $949.99, this is genuinely poor value — weaker CPU, weaker GPU, half the RAM, and half the storage compared to the ASUS, at a similar effective price. Only worth buying at <strong>≤$599</strong> on sale, or as the <strong>Open Box at $697.99</strong>. HP's MSRP inflation is real — don't pay it.</p>
+      <div class="tags" style="margin-top:10px;"><span class="tag t-coral">Avoid at $949.99</span><span class="tag t-amber">Open Box OK at $697</span><span class="tag t-amber">Wait for ≤$599 sale</span></div>
+    </div>
+    <div class="vbox vs">
+      <h3 style="color:var(--sage-dark);">Option C: HP Flip Ultra 7 ★<br><small style="font-size:13px;font-weight:400;">The recommendation for your situation</small></h3>
+      <p>Best all-around for an MIS graduate who games and owns a Steam Deck LCD. Core Ultra 7 256V + Arc 140V GPU + 4-mode flip touchscreen + Thunderbolt 4. After the bundle it costs <strong>~$59–$209</strong>. Every enterprise tool works on day one. Arc 140V runs Game Pass. Thunderbolt 4 handles any office dock. SSD is upgradeable.</p>
+      <ul class="pcl" style="margin-top:8px;">
+        <li><em class="ico pro">+</em>All MIS enterprise apps — SAP, Oracle, SQL Server, Tableau, all VPNs</li>
+        <li><em class="ico pro">+</em>Arc 140V runs Game Pass and lighter PC games</li>
+        <li><em class="ico pro">+</em>TB4 dock on day one at any office</li>
+        <li><em class="ico pro">+</em>SSD upgradeable when 512 GB fills up</li>
+      </ul>
+      <div class="tags" style="margin-top:10px;"><span class="tag t-sage">All MIS apps</span><span class="tag t-sage">Full Game Pass value</span><span class="tag t-sage">~$59–$209 after bundle</span></div>
+    </div>
+  </div>
+  <div class="notice n-sage" style="margin-top:18px;"><span class="n-icon">★</span><span><strong>RAM caveat for MIS:</strong> All three have soldered, non-upgradeable RAM. The ASUS Vivobook S14 is the only one with 32 GB — a genuine long-term advantage for data-heavy MIS roles. If your career involves running VMs, large SQL databases, or Power BI with big datasets, Option A's 32 GB is worth serious consideration alongside Option C.</span></div>
+</section>
+
+</main>
+
+<footer>
+  <p>Sources: Best Buy (SKU 6613868, price verified May 2026) · Walmart (ASUS S5406SA-WH79) · Microsoft Ultimate College Bundle terms (valid through June 30, 2026) · Tom's Guide, Tom's Hardware, XDA Developers reviews · iFixit teardown guides</p>
+  <p style="margin-top:6px;"><a href="https://arm64.app" target="_blank" rel="noopener">arm64.app</a> · Generated with Claude · May 2026</p>
+</footer>
+
+<script>
+const btn=document.getElementById('hamBtn');
+const drawer=document.getElementById('drawer');
+const overlay=document.getElementById('drawerOverlay');
+
+function openDrawer(){btn.classList.add('open');drawer.classList.add('open');overlay.classList.add('open');btn.setAttribute('aria-expanded','true')}
+function closeDrawer(){btn.classList.remove('open');drawer.classList.remove('open');overlay.classList.remove('open');btn.setAttribute('aria-expanded','false')}
+
+btn.addEventListener('click',()=>drawer.classList.contains('open')?closeDrawer():openDrawer());
+overlay.addEventListener('click',closeDrawer);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){e.target.style.animationDelay=(i*.04)+'s';e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.07});
+reveals.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
