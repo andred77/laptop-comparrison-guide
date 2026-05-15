@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP OmniBook X Flip — Ultra 7 ★ Recommended — Laptop Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-page:#F4F2EE;--bg-card:#FAFAF8;--bg-muted:#EDEAE4;--bg-dark:#2C3A35;
+  --sage:#4A7C59;--sage-light:#EAF2EC;--sage-mid:#C6DEC9;--sage-dark:#33583E;
+  --slate:#4A6177;--slate-light:#E8EFF5;--slate-mid:#C0D2DF;
+  --amber:#7A5C2E;--amber-light:#F5EDD8;--amber-mid:#DEC898;
+  --coral:#8C4A3A;--coral-light:#F5E8E4;
+  --text-primary:#1E2420;--text-secondary:#4A5148;--text-muted:#7A7E79;--text-on-dark:#E8EDE9;
+  --border:#D4D0C8;--border-soft:#E4E1DA;
+  --r-sm:6px;--r-md:10px;--r-lg:16px;--r-xl:22px;
+  --sh-sm:0 1px 4px rgba(30,36,32,.07);--sh-md:0 3px 12px rgba(30,36,32,.09);
+  --font-d:'Lora',Georgia,serif;--font-b:'Source Sans 3','Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);font-size:16px;line-height:1.7;color:var(--text-primary);background:var(--bg-page);-webkit-font-smoothing:antialiased}
+a{color:var(--sage);text-decoration:none}
+a:hover{text-decoration:underline}
+.topbar{background:var(--bg-dark);display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:52px;position:sticky;top:0;z-index:500;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.tab-nav{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;margin-right:12px}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-link{flex-shrink:0;font-family:var(--font-b);font-size:13px;font-weight:500;color:rgba(232,237,233,.65);padding:7px 14px;border-radius:var(--r-sm);white-space:nowrap;transition:background .18s,color .18s}
+.tab-link:hover{background:rgba(255,255,255,.08);color:var(--text-on-dark);text-decoration:none}
+.tab-link.active{background:var(--sage);color:#fff}
+.ham-btn{background:none;border:none;cursor:pointer;width:36px;height:36px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;flex-shrink:0;border-radius:var(--r-sm);transition:background .18s}
+.ham-btn:hover{background:rgba(255,255,255,.1)}
+.ham-bar{width:20px;height:2px;background:rgba(232,237,233,.75);border-radius:2px;transition:all .25s}
+.ham-btn.open .ham-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham-btn.open .ham-bar:nth-child(2){opacity:0;transform:scaleX(0)}
+.ham-btn.open .ham-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.drawer{position:fixed;top:52px;right:-300px;width:280px;height:calc(100vh - 52px);background:var(--bg-card);box-shadow:var(--sh-md);z-index:499;overflow-y:auto;transition:right .28s cubic-bezier(.4,0,.2,1);border-left:1px solid var(--border)}
+.drawer.open{right:0}
+.drawer-overlay{display:none;position:fixed;inset:52px 0 0 0;background:rgba(0,0,0,.28);z-index:498}
+.drawer-overlay.open{display:block}
+.drawer-header{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);padding:18px 20px 10px;border-bottom:1px solid var(--border-soft)}
+.drawer-link{display:flex;align-items:center;gap:10px;padding:11px 20px;font-size:14px;color:var(--text-secondary);border-bottom:1px solid var(--border-soft);transition:background .15s,color .15s}
+.drawer-link:hover{background:var(--sage-light);color:var(--sage-dark);text-decoration:none}
+.drawer-num{font-size:10px;font-weight:700;color:var(--text-muted);background:var(--bg-muted);border-radius:4px;padding:1px 5px;flex-shrink:0;min-width:24px;text-align:center}
+.main{max-width:960px;margin:0 auto;padding:44px 20px 80px}
+.product-hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-bottom:48px;background:var(--bg-card);border-radius:var(--r-xl);padding:36px;box-shadow:var(--sh-md);border:2px solid var(--sage-mid)}
+@media(max-width:680px){.product-hero{grid-template-columns:1fr}}
+.product-img-wrap{background:var(--bg-muted);border-radius:var(--r-lg);overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:280px}
+.product-img-wrap img{width:100%;height:100%;object-fit:contain;padding:16px;display:block;}
+.product-img-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--text-muted);font-size:48px;min-height:280px;text-align:center;padding:20px}
+.product-img-placeholder span{font-size:14px;font-weight:500}
+.rec-banner{background:var(--sage-light);border:1px solid var(--sage-mid);border-radius:var(--r-md);padding:10px 16px;font-size:14px;color:var(--sage-dark);margin-bottom:14px;line-height:1.5}
+.product-badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;background:var(--sage-light);color:var(--sage-dark)}
+.product-name{font-family:var(--font-d);font-size:clamp(20px,4vw,30px);font-weight:600;color:var(--text-primary);line-height:1.2;margin-bottom:6px}
+.product-model{font-size:13px;color:var(--text-muted);margin-bottom:18px}
+.product-overview{font-size:15px;color:var(--text-secondary);line-height:1.7;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border-soft)}
+.pricing-block{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:18px}
+@media(max-width:500px){.pricing-block{grid-template-columns:1fr}}
+.price-card{border-radius:var(--r-md);padding:12px 14px;text-align:center}
+.price-card.msrp{background:var(--bg-muted);border:1px solid var(--border)}
+.price-card.current{background:var(--sage-light);border:1px solid var(--sage-mid)}
+.price-card.bundle{background:var(--bg-dark);border:none}
+.price-card-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);margin-bottom:4px}
+.price-card.current .price-card-lbl{color:var(--sage-dark)}
+.price-card.bundle .price-card-lbl{color:var(--sage-mid)}
+.price-card-val{font-family:var(--font-d);font-size:22px;font-weight:600;color:var(--text-primary)}
+.price-card.current .price-card-val{color:var(--sage-dark)}
+.price-card.bundle .price-card-val{color:#fff}
+.price-card-sub{font-size:11px;color:var(--text-muted);margin-top:3px}
+.price-card.bundle .price-card-sub{color:rgba(232,237,233,.55)}
+
+/* ── PRICE HERO BANNER ── */
+.price-hero{
+  background:var(--sage);
+  border-radius:var(--r-lg);
+  padding:18px 20px 14px;
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.price-hero.warn-price{background:var(--amber)}
+.price-hero-left{}
+.price-hero-eyebrow{
+  font-size:10px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.1em;color:rgba(255,255,255,.7);margin-bottom:4px;
+}
+.price-hero-amount{
+  font-family:var(--font-d);font-size:42px;font-weight:600;
+  color:#fff;line-height:1;
+}
+.price-hero-amount sup{font-size:22px;vertical-align:top;margin-top:6px;margin-right:2px}
+.price-hero-breakdown{font-size:12px;color:rgba(255,255,255,.75);margin-top:5px}
+.price-hero-right{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.price-pill{
+  font-size:12px;font-weight:600;padding:5px 12px;
+  border-radius:99px;background:rgba(255,255,255,.18);
+  color:#fff;white-space:nowrap;
+}
+.price-pill.dark-pill{background:rgba(0,0,0,.25)}
+
+.price-card.pen{background:#EEEDFE;border:1px solid #C8C4F8}
+.price-card.pen .price-card-lbl{color:#534AB7}
+.price-card.pen .price-card-val{color:#534AB7;font-size:18px}
+.price-card.savings{background:var(--sage-light);border:1px solid var(--sage-mid)}
+.price-card.savings .price-card-lbl{color:var(--sage-dark)}
+.price-card.savings .price-card-val{color:var(--sage-dark)}
+.pricing-block.five-col{grid-template-columns:repeat(5,1fr)}
+@media(max-width:700px){.pricing-block.five-col{grid-template-columns:1fr 1fr}}
+.subtotal-row{background:var(--bg-muted);border:1px solid var(--border);border-radius:var(--r-md);padding:10px 14px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.subtotal-row-lbl{color:var(--text-muted);font-size:12px}
+.subtotal-row-val{font-weight:700;color:var(--text-primary);font-size:15px}
+.pen-badge{display:inline-block;background:#EEEDFE;color:#534AB7;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:10px}
+.buy-btn{display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;padding:12px 24px;border-radius:var(--r-md);font-size:15px;font-weight:600;transition:background .18s,transform .15s;text-decoration:none}
+.buy-btn:hover{background:var(--sage-dark);transform:translateY(-1px);text-decoration:none}
+.buy-btn-sub{font-size:12px;color:var(--text-muted);margin-top:6px}
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:11px;border-bottom:2px solid var(--sage)}
+.section-num{width:28px;height:28px;border-radius:50%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:13px;font-weight:600;flex-shrink:0}
+.section-header h2{font-family:var(--font-d);font-size:19px;font-weight:600;color:var(--text-primary)}
+h3{font-family:var(--font-d);font-size:16px;font-weight:600;color:var(--text-primary);margin:16px 0 7px}
+h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin:13px 0 5px}
+p{color:var(--text-secondary);margin-bottom:8px}
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--bg-card);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm);border:.5px solid var(--border)}
+@media(max-width:520px){.spec-grid{grid-template-columns:1fr}}
+.spec-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 14px;border-bottom:.5px solid var(--border-soft);font-size:13px;gap:8px}
+.spec-row:nth-child(even){background:var(--bg-muted)}
+.spec-label{color:var(--text-muted);font-weight:600;font-size:12px;flex-shrink:0;min-width:100px}
+.spec-val{text-align:right;color:var(--text-primary);font-weight:500}
+.spec-val.good{color:var(--sage-dark)}.spec-val.ok{color:var(--amber)}.spec-val.bad{color:var(--coral)}
+.pcl{list-style:none;margin:3px 0 10px}
+.pcl li{display:flex;align-items:flex-start;gap:7px;font-size:14px;line-height:1.5;margin-bottom:5px;color:var(--text-secondary)}
+.ico{flex-shrink:0;font-size:14px;font-style:normal;margin-top:2px}
+.pro{color:var(--sage)}.con{color:var(--coral)}.warn-ico{color:var(--amber)}
+.notice{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-radius:var(--r-md);font-size:14px;line-height:1.55;margin:9px 0}
+.n-icon{font-size:15px;flex-shrink:0;margin-top:1px}
+.n-sage{background:var(--sage-light);color:var(--sage-dark);border-left:3px solid var(--sage)}
+.n-amber{background:var(--amber-light);color:var(--amber);border-left:3px solid var(--amber-mid)}
+.n-slate{background:var(--slate-light);color:var(--slate);border-left:3px solid var(--slate-mid)}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);margin-bottom:24px;padding:6px 12px;border-radius:var(--r-sm);background:var(--bg-muted);border:.5px solid var(--border);transition:background .15s}
+.back-link:hover{background:var(--border-soft);text-decoration:none;color:var(--text-secondary)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0}.reveal.visible{animation:fadeUp .45s ease forwards}
+footer{background:var(--bg-dark);color:rgba(232,237,233,.45);text-align:center;font-size:12px;padding:24px 20px;line-height:1.7}
+footer a{color:var(--sage-mid)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <nav class="tab-nav" aria-label="Site pages">
+    <a href="index.html" class="tab-link">Laptop Comparison</a>
+    <a href="vivobook.html" class="tab-link">VivoBook S14</a>
+    <a href="omnibook-ultra5.html" class="tab-link">OmniBook X (Ultra 5)</a>
+    <a href="omnibook-ultra7.html" class="tab-link active">OmniBook X (Ultra 7)</a>
+  </nav>
+  <button class="ham-btn" id="hamBtn" aria-label="Page sections menu" aria-expanded="false">
+    <span class="ham-bar"></span><span class="ham-bar"></span><span class="ham-bar"></span>
+  </button>
+</div>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="Page sections">
+  <div class="drawer-header">On this page</div>
+  <a href="#overview"   class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">1</span>Overview &amp; Pricing</a>
+  <a href="#specs"      class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">2</span>Full Specifications</a>
+  <a href="#pros-cons"  class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">3</span>Pros &amp; Cons</a>
+  <a href="#charging"   class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">4</span>Charging</a>
+  <a href="#mis-fit"    class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">5</span>MIS Career Fit</a>
+  <a href="#gaming-fit" class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">6</span>Gaming &amp; Steam Deck</a>
+  <a href="#upgrades"   class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">7</span>Upgradability</a>
+  <a href="#vs-ultra5"  class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">8</span>Ultra 7 vs. Ultra 5</a>
+  <a href="#verdict"    class="drawer-link" onclick="closeDrawer()"><span class="drawer-num">9</span>Verdict</a>
+</div>
+
+<main class="main">
+  <a href="index.html" class="back-link">← Back to Full Comparison</a>
+
+  <!-- PRODUCT HERO -->
+  <div class="product-hero reveal" id="overview">
+    <div class="product-img-wrap">
+      <img
+        src="data:image/webp;base64,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"
+        alt="HP OmniBook X Flip 14 — Core Ultra 7 256V — Glacial Silver — 14-fm0047nr — Recommended"
+        style="width:100%;height:100%;object-fit:contain;padding:16px;display:block;"
+      />
+    </div>
+    <div>
+      <div class="rec-banner">★ <strong>This is the recommended laptop</strong> for an MIS graduate who games and owns a Steam Deck LCD. Best balance of CPU performance, GPU capability, touchscreen versatility, enterprise compatibility, and value after the Microsoft bundle.</div>
+      <span class="product-badge">Option C · ★ Recommended</span>
+      <div class="product-name">HP OmniBook X Flip 14</div>
+      <div class="product-model">Model: 14-fm0047nr · Intel Core Ultra 7 256V · Glacial Silver · Copilot+ PC</div>
+      <p class="product-overview">The HP OmniBook X Flip 14 Ultra 7 is the recommended pick for an MIS graduate who games and owns a Steam Deck LCD. It combines a stronger Core Ultra 7 256V processor, the better Intel Arc 140V GPU (versus the 130V in the Ultra 5 model), a 14" 2K touchscreen with four flip modes, and Thunderbolt 4 — all on standard x86 Windows that runs every enterprise tool without question. It also includes the HP USB-C Rechargeable MPP2.0 Tilt Natural Silver Pen (retail $79.99) at no extra cost — perfect for annotating documents in tablet mode. After Washington state sales tax ($89.77), the laptop subtotals at $944.76. After the Microsoft Ultimate College Bundle ($639.86), your net out-of-pocket is approximately $304.90. The SSD is user-upgradeable when 512 GB fills up. Tom's Hardware confirmed the Intel Arc 140V delivers better graphical performance and that the teardown is beginner-friendly (3 Torx T5 screws). The battery lasts 10–12 hours in typical mixed use — enough for a full school or work day.</p>
+
+      <div class="pen-badge">🖊 Includes FREE: HP USB-C Rechargeable MPP2.0 Tilt Natural Silver Pen (retail $79.99)</div>
+
+      <!-- PRICE HERO — matches Vivobook style -->
+      <div class="price-hero">
+        <div class="price-hero-left">
+          <div class="price-hero-eyebrow">You pay (incl. Washington 10.5% tax) · Pen included FREE</div>
+          <div class="price-hero-amount"><sup>$</sup>944.76</div>
+          <div class="price-hero-breakdown">$854.99 + $89.77 tax · Pen ($79.99 value) FREE · Save $335.22 vs. MSRP package</div>
+        </div>
+        <div class="price-hero-right">
+          <span class="price-pill">MSRP $1,279.98 (laptop + pen)</span>
+          <span class="price-pill dark-pill">~$304.90 after MS Bundle</span>
+        </div>
+      </div>
+
+      <div class="pricing-block">
+        <div class="price-card msrp">
+          <div class="price-card-lbl">MSRP (no tax)</div>
+          <div class="price-card-val">$1,199.99</div>
+          <div class="price-card-sub">HP.com full retail + pen $79.99 free</div>
+        </div>
+        <div class="price-card current">
+          <div class="price-card-lbl">Current price (no tax)</div>
+          <div class="price-card-val">$854.99</div>
+          <div class="price-card-sub">HP.com direct — pen included FREE</div>
+        </div>
+        <div class="price-card bundle">
+          <div class="price-card-lbl">After MS Bundle</div>
+          <div class="price-card-val">~$304.90</div>
+          <div class="price-card-sub">$944.76 − $639.86 bundle value</div>
+        </div>
+      </div>
+
+      <a class="buy-btn" href="https://www.hp.com/us-en/shop/pdp/hp-omnibook-x-flipngai-14-fm0047nr-b88a6ua-aba" target="_blank" rel="noopener">
+        🛒 Buy at HP.com
+      </a>
+      <div class="buy-btn-sub">MSRP: $1,199.99 + pen ($79.99) · Current: $854.99 + WA tax = $944.76 · After bundle: ~$304.90 · Free shipping</div>
+    </div>
+  </div>
+
+  <!-- SPECS -->
+  <section class="section reveal" id="specs">
+    <div class="section-header"><div class="section-num">2</div><h2>Full Specifications</h2></div>
+    <div class="spec-grid">
+      <div class="spec-row"><span class="spec-label">Processor</span><span class="spec-val good">Intel Core Ultra 7 256V · 8-core · up to 4.8 GHz · 47 TOPS NPU</span></div>
+      <div class="spec-row"><span class="spec-label">RAM</span><span class="spec-val ok">16 GB LPDDR5x-8533 · onboard (cannot upgrade)</span></div>
+      <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-val ok">512 GB PCIe Gen 4 NVMe M.2 SSD · user-replaceable</span></div>
+      <div class="spec-row"><span class="spec-label">Display</span><span class="spec-val ok">14" IPS · 1920×1200 (2K) · 60 Hz · 400 nits · Gorilla Glass 3 · touchscreen</span></div>
+      <div class="spec-row"><span class="spec-label">GPU</span><span class="spec-val good">Intel Arc 140V · 8 GB shared system memory — stronger than Arc 130V</span></div>
+      <div class="spec-row"><span class="spec-label">Touchscreen</span><span class="spec-val good">Yes · multi-touch · laptop / tent / tablet / reverse · 360° hinge</span></div>
+      <div class="spec-row"><span class="spec-label">Weight</span><span class="spec-val good">~3.1 lbs (1.4 kg)</span></div>
+      <div class="spec-row"><span class="spec-label">Battery</span><span class="spec-val good">68 Wh · 10–12 hrs real-world mixed use</span></div>
+      <div class="spec-row"><span class="spec-label">Charging</span><span class="spec-val ok">USB-C PD via Thunderbolt 4 port only · 65W included · firmware quirks &gt;65W</span></div>
+      <div class="spec-row"><span class="spec-label">Ports</span><span class="spec-val good">1× Thunderbolt 4 (USB-C 40Gbps, PD, DP 2.1) · 1× USB-C 10Gbps · 2× USB-A 10Gbps · HDMI 2.1 · 3.5mm audio</span></div>
+      <div class="spec-row"><span class="spec-label">Wi-Fi</span><span class="spec-val good">Wi-Fi 6E (802.11ax) · Bluetooth 5.3</span></div>
+      <div class="spec-row"><span class="spec-label">Webcam</span><span class="spec-val good">5MP IR camera · AI noise reduction · camera privacy shutter</span></div>
+      <div class="spec-row"><span class="spec-label">Keyboard</span><span class="spec-val ok">Backlit · Copilot key · lattice-free design · 1mm key travel</span></div>
+      <div class="spec-row"><span class="spec-label">Build</span><span class="spec-val ok">Recycled metal chassis · Gorilla Glass 3 display</span></div>
+      <div class="spec-row"><span class="spec-label">Audio</span><span class="spec-val good">Poly Studio audio · DTS: X Ultra · dual microphones</span></div>
+      <div class="spec-row"><span class="spec-label">OS</span><span class="spec-val good">Windows 11 Home x86 · Copilot+ PC</span></div>
+      <div class="spec-row"><span class="spec-label">Stylus (Included)</span><span class="spec-val good">HP USB-C Rechargeable MPP2.0 Tilt Natural Silver Pen · 4096 pressure · 30-day battery · retail $79.99 — FREE</span></div>
+      <div class="spec-row"><span class="spec-label">Color</span><span class="spec-val">Glacial Silver</span></div>
+      <div class="spec-row"><span class="spec-label">Model number</span><span class="spec-val">14-fm0047nr · B88A6UA#ABA</span></div>
+    </div>
+  </section>
+
+  <!-- PROS AND CONS -->
+  <section class="section reveal" id="pros-cons">
+    <div class="section-header"><div class="section-num">3</div><h2>Pros &amp; Cons</h2></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div>
+        <h4>Pros</h4>
+        <ul class="pcl">
+          <li><em class="ico pro">+</em><strong>Core Ultra 7 256V</strong> — stronger than the Ultra 5 in the Option B model; beat Lenovo Yoga 9i and ThinkPad X9 in Geekbench 6 multi-core (Tom's Hardware)</li>
+          <li><em class="ico pro">+</em><strong>Intel Arc 140V GPU</strong> — meaningfully better than the 130V in the Ultra 5 model for gaming and graphical tasks; runs more Game Pass titles at better settings</li>
+          <li><em class="ico pro">+</em><strong>Touchscreen + 4-mode flip</strong> — use as laptop, tablet for annotating docs, tent for presenting, or reverse for watching; unique value for MIS workflows</li>
+          <li><em class="ico pro">+</em><strong>Standard x86 Windows</strong> — every enterprise tool works: SAP, Oracle, SQL Server, Tableau, Power BI Desktop, company VPNs — no compatibility research needed on day one</li>
+          <li><em class="ico pro">+</em><strong>Thunderbolt 4</strong> — connects to any office docking station with one cable delivering power, video, and USB peripherals</li>
+          <li><em class="ico pro">+</em><strong>Excellent ports</strong> — 2 USB-A + Thunderbolt 4 + USB-C + HDMI 2.1; rarely need a dongle at a client site or office</li>
+          <li><em class="ico pro">+</em><strong>5MP webcam with AI</strong> — far better than typical laptop cameras for video calls</li>
+          <li><em class="ico pro">+</em><strong>SSD user-replaceable</strong> — beginner-friendly upgrade path when 512 GB fills up (3 Torx T5 screws, confirmed by Tom's Hardware)</li>
+          <li><em class="ico pro">+</em><strong>Value after bundle</strong> — ~$699–$849 minus $639.86 bundle = effectively ~$59–$209 out of pocket if new to both services</li>
+          <li><em class="ico pro">+</em><strong>USB-C PD charging</strong> — no proprietary barrel connector; shares charging cable with phone and Steam Deck</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cons</h4>
+        <ul class="pcl">
+          <li><em class="ico con">✗</em><strong>Only 16 GB RAM</strong> — the main weakness versus the ASUS Vivobook S14; adequate for typical MIS use now but may feel limiting for heavy data workloads in 3–4 years</li>
+          <li><em class="ico con">✗</em><strong>Only 512 GB storage</strong> — will fill up faster than the ASUS's 1 TB; plan to upgrade the SSD in 1–2 years if you store large files</li>
+          <li><em class="ico con">✗</em><strong>IPS display (not OLED)</strong> — 400 nits and standard color gamut; good but not as vivid or deep-black as the ASUS Vivobook's OLED</li>
+          <li><em class="ico con">✗</em><strong>Mushy trackpad</strong> — the most consistent complaint in reviews; noticeably inferior to premium trackpads on competing laptops</li>
+          <li><em class="ico con">✗</em><strong>Keyboard flex</strong> — some flex under heavy sustained typing; less satisfying than the ASUS Vivobook</li>
+          <li><em class="ico con">✗</em><strong>Charging port caveat</strong> — only the Thunderbolt 4 port (rear-most, left side) charges the laptop; the second USB-C on the same side does not, making it easy to accidentally plug into the wrong port</li>
+          <li><em class="ico con">✗</em><strong>Runs hot under sustained load</strong> — Tom's Hardware noted heat under intense sustained workloads; fine for typical use</li>
+          <li><em class="ico con">✗</em><strong>HP MSRP inflation</strong> — verify you're buying at a realistic sale price, not the inflated MSRP; check HP.com and Walmart for the best deal</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARGING -->
+  <section class="section reveal" id="charging">
+    <div class="section-header"><div class="section-num">4</div><h2>Charging</h2></div>
+    <div class="spec-grid" style="margin-bottom:14px;">
+      <div class="spec-row"><span class="spec-label">Connector type</span><span class="spec-val good">USB-C Power Delivery — universal standard</span></div>
+      <div class="spec-row"><span class="spec-label">Charging ports</span><span class="spec-val ok">Thunderbolt 4 port only · secondary USB-C does not charge the laptop</span></div>
+      <div class="spec-row"><span class="spec-label">Included adapter</span><span class="spec-val good">65W USB-C PD adapter</span></div>
+      <div class="spec-row"><span class="spec-label">Max PD supported</span><span class="spec-val ok">Box claims 65–100W · firmware caps ~65W in practice</span></div>
+      <div class="spec-row"><span class="spec-label">Fast charging</span><span class="spec-val good">Yes — ~50% in ~40 min at 65W</span></div>
+      <div class="spec-row"><span class="spec-label">Power bank support</span><span class="spec-val good">Yes — any 45W+ USB-C PD power bank</span></div>
+      <div class="spec-row"><span class="spec-label">Airport USB-C outlets</span><span class="spec-val good">Yes — charges at lower speed from any USB-C outlet</span></div>
+      <div class="spec-row"><span class="spec-label">3rd-party chargers</span><span class="spec-val ok">Works but &gt;65W may trigger "weak charger" firmware warning</span></div>
+      <div class="spec-row"><span class="spec-label">Dock + charge combo</span><span class="spec-val good">TB4 dock delivers power + display + USB simultaneously</span></div>
+      <div class="spec-row"><span class="spec-label">Shares with Steam Deck</span><span class="spec-val good">Yes — same USB-C PD standard</span></div>
+    </div>
+    <div class="notice n-amber"><span class="n-icon">!</span><span><strong>Correct port matters:</strong> Plug into the Thunderbolt 4 port (rear-most connector on the left side) to charge. The second USB-C connector on the left side is data/display only. The included 65W adapter works best — third-party adapters above 65W may show "weak charger" warnings due to firmware limits.</span></div>
+    <div class="notice n-slate"><span class="n-icon">🔌</span><span><strong>Steam Deck synergy:</strong> One 65W GaN USB-C charger (~$25) powers both this laptop and your Steam Deck LCD — one brick in your bag instead of two. Look for Anker, Baseus, or UGREEN 65W GaN chargers.</span></div>
+  </section>
+
+  <!-- MIS FIT -->
+  <section class="section reveal" id="mis-fit">
+    <div class="section-header"><div class="section-num">5</div><h2>MIS Career Fit</h2></div>
+    <p>This is the recommended laptop for MIS graduates entering the workforce. Standard x86 Windows means every tool your employer uses on day one will work — no ARM compatibility research, no caveats. The Thunderbolt 4 port connects to any office docking station with one cable. The touchscreen adds real workflow value for annotating requirements documents and presenting in tent mode.</p>
+    <h4>Best MIS roles for this laptop</h4>
+    <ul class="pcl">
+      <li><em class="ico pro">+</em><strong>Systems analyst / IT project manager</strong> — handles all productivity software, diagramming tools, video calls, and documentation workflows with ease</li>
+      <li><em class="ico pro">+</em><strong>Business analyst / consultant</strong> — touchscreen + tent mode for presentations; Thunderbolt 4 for office docking; lightweight enough for travel</li>
+      <li><em class="ico pro">+</em><strong>MIS generalist / IT operations</strong> — runs every enterprise tool; strong enough for SQL Server, Tableau, and Power BI Desktop workloads at 16 GB</li>
+      <li><em class="ico warn-ico">!</em><strong>Heavy data engineering / BI with large datasets</strong> — 16 GB is adequate today but the ASUS Vivobook S14 (Option A) with 32 GB is the stronger long-term choice for roles that regularly run large SQL queries, complex Power BI models, or multiple database connections simultaneously</li>
+    </ul>
+    <h4>Enterprise compatibility checklist</h4>
+    <ul class="pcl">
+      <li><em class="ico pro">+</em>SAP ERP / SAP GUI — works</li>
+      <li><em class="ico pro">+</em>Oracle Database tools — works</li>
+      <li><em class="ico pro">+</em>SQL Server Management Studio — works</li>
+      <li><em class="ico pro">+</em>Tableau Desktop — works</li>
+      <li><em class="ico pro">+</em>Power BI Desktop — works</li>
+      <li><em class="ico pro">+</em>Company VPN clients — works</li>
+      <li><em class="ico pro">+</em>Microsoft Office 365 — works</li>
+      <li><em class="ico pro">+</em>Thunderbolt 4 docking stations — works (any brand)</li>
+    </ul>
+  </section>
+
+  <!-- GAMING -->
+  <section class="section reveal" id="gaming-fit">
+    <div class="section-header"><div class="section-num">6</div><h2>Gaming &amp; Steam Deck LCD</h2></div>
+    <p>The Arc 140V GPU is the best gaming GPU in this comparison (among the three new laptops), making the full $359.88 Xbox Game Pass Ultimate bundle value genuinely redeemable — you can actually play those 500+ games. Your Steam Deck LCD handles demanding games; this laptop handles desk-based lighter gaming and Game Pass.</p>
+    <ul class="pcl">
+      <li><em class="ico pro">+</em>Full Game Pass library accessible — Arc 140V runs more titles at better settings than the Arc 130V in Option B</li>
+      <li><em class="ico pro">+</em>Indie and medium-weight Steam games run at medium-to-high settings</li>
+      <li><em class="ico pro">+</em>AAA titles possible at low settings — same GPU as high-end integrated graphics from this generation</li>
+      <li><em class="ico pro">+</em>Cloud gaming via Game Pass works through any browser</li>
+      <li><em class="ico pro">+</em>Xbox Design Lab controller from bundle — works via Bluetooth for PC gaming on this laptop</li>
+      <li><em class="ico pro">+</em>Same USB-C charger as Steam Deck — one charger for everything</li>
+      <li><em class="ico con">✗</em>Not a gaming laptop — your Steam Deck is still the right tool for serious gaming sessions</li>
+    </ul>
+    <div class="notice n-sage"><span class="n-icon">🎮</span><span><strong>Best gaming setup for you:</strong> Steam Deck LCD for portable gaming and demanding titles → HP OmniBook X Flip Ultra 7 for desk-based Game Pass sessions and lighter PC games → One USB-C charger powers both.</span></div>
+  </section>
+
+  <!-- UPGRADES -->
+  <section class="section reveal" id="upgrades">
+    <div class="section-header"><div class="section-num">7</div><h2>Upgradability</h2></div>
+    <div class="spec-grid" style="margin-bottom:14px;">
+      <div class="spec-row"><span class="spec-label">SSD</span><span class="spec-val good">User-replaceable NVMe M.2 · beginner-friendly · confirmed by Tom's Hardware</span></div>
+      <div class="spec-row"><span class="spec-label">How to open</span><span class="spec-val good">3 Torx T5 screws + 1 captive screw → pry tool behind hinges → base pops off</span></div>
+      <div class="spec-row"><span class="spec-label">RAM</span><span class="spec-val bad">Onboard — permanently 16 GB · cannot upgrade</span></div>
+      <div class="spec-row"><span class="spec-label">Wi-Fi card</span><span class="spec-val ok">Accessible · covered by thin heat shield (peel back with fingers)</span></div>
+      <div class="spec-row"><span class="spec-label">Difficulty</span><span class="spec-val good">Beginner-friendly with a teardown guide</span></div>
+      <div class="spec-row"><span class="spec-label">Recommended SSD</span><span class="spec-val">Samsung 990 Evo or WD Black SN770 · PCIe Gen 4 NVMe M.2 2280 · ~$60–$100 for 1 TB</span></div>
+      <div class="spec-row"><span class="spec-label">Tools needed</span><span class="spec-val">Torx T5 screwdriver + plastic pry tool</span></div>
+    </div>
+    <div class="notice n-sage"><span class="n-icon">ℹ</span><span>Search YouTube for "HP 14-fm0047nr teardown" or iFixit.com before opening. Tom's Hardware documented the exact process — keep the screws organized because the two near the palm rest are shorter than the one near the hinge. Budget ~$60–$100 for a 1 TB PCIe Gen 4 NVMe drive when you outgrow 512 GB.</span></div>
+  </section>
+
+  <!-- VS ULTRA 5 -->
+  <section class="section reveal" id="vs-ultra5">
+    <div class="section-header"><div class="section-num">8</div><h2>Ultra 7 vs. Ultra 5 — Why This Model</h2></div>
+    <p>Both models share the same chassis, touchscreen, ports, and general design. Here's exactly what you get for the extra ~$100–$250 by choosing the Ultra 7 over the Ultra 5 at their respective current prices:</p>
+    <div class="spec-grid" style="margin-bottom:14px;">
+      <div class="spec-row"><span class="spec-label">CPU</span><span class="spec-val">Ultra 5 226V: 4.5 GHz · 40 TOPS NPU → Ultra 7 256V: 4.8 GHz · 47 TOPS NPU</span></div>
+      <div class="spec-row"><span class="spec-label">GPU</span><span class="spec-val">Ultra 5: Arc 130V → Ultra 7: Arc 140V · meaningfully better in gaming and graphical tasks</span></div>
+      <div class="spec-row"><span class="spec-label">Gaming performance</span><span class="spec-val">Arc 140V runs more Game Pass titles at better settings than Arc 130V</span></div>
+      <div class="spec-row"><span class="spec-label">Geekbench 6</span><span class="spec-val">Ultra 7 scored higher than Lenovo Yoga 9i (Core Ultra 7 258V) per Tom's Hardware</span></div>
+      <div class="spec-row"><span class="spec-label">Weight difference</span><span class="spec-val">Ultra 7 model: ~3.1 lbs · Ultra 5 model: ~3.3 lbs · slightly lighter</span></div>
+      <div class="spec-row"><span class="spec-label">Price difference at current pricing</span><span class="spec-val">Ultra 5 at $949.99 MSRP vs. Ultra 7 at ~$699–$849 · Ultra 7 is better value</span></div>
+    </div>
+    <div class="notice n-sage"><span class="n-icon">★</span><span>At current prices, the Ultra 7 model costs <em>less</em> than the Ultra 5 model at its inflated MSRP — while delivering a meaningfully stronger CPU and GPU. This is why the Ultra 7 is the recommendation: better specs AND better value right now.</span></div>
+  </section>
+
+  <!-- VERDICT -->
+  <section class="section reveal" id="verdict">
+    <div class="section-header"><div class="section-num">9</div><h2>Verdict</h2></div>
+    <p>The HP OmniBook X Flip 14 Ultra 7 is the recommended laptop for an MIS graduate who games and owns a Steam Deck LCD. Here's the complete case:</p>
+    <ul class="pcl">
+      <li><em class="ico pro">+</em><strong>MIS career:</strong> Standard x86 Windows means SAP, Oracle, SQL Server, Tableau, Power BI Desktop, company VPNs, and every IT tool your future employer uses will work on day one — zero compatibility research required</li>
+      <li><em class="ico pro">+</em><strong>Gaming:</strong> The Arc 140V GPU makes the full $359.88 Game Pass Ultimate bundle value genuinely redeemable — you can play those 500+ games at your desk while your Steam Deck handles serious gaming</li>
+      <li><em class="ico pro">+</em><strong>Xbox controller from bundle:</strong> Works for PC gaming on this laptop and also pairs via Bluetooth with your Steam Deck when docked</li>
+      <li><em class="ico pro">+</em><strong>Thunderbolt 4 docking:</strong> Any office docking station works on day one at a new job — monitors, keyboard, mouse, and Ethernet through one cable</li>
+      <li><em class="ico pro">+</em><strong>Touchscreen + flip:</strong> Tablet mode for annotating requirements documents, tent mode for client presentations, reverse mode for watching content</li>
+      <li><em class="ico pro">+</em><strong>Net cost:</strong> ~$699–$849 minus $639.86 bundle = ~$59–$209 out of pocket — a genuinely strong deal for what you get</li>
+    </ul>
+    <div class="notice n-sage"><span class="n-icon">★</span><span><strong>One consideration:</strong> If your MIS career is heading toward heavy data engineering, large database administration, or complex BI modeling with massive datasets, the ASUS Vivobook S14 (Option A) with 32 GB of RAM is the stronger long-term investment. The Ultra 7's 16 GB is excellent for most use cases but will show limits in the most demanding data scenarios.</span></div>
+    <div style="margin-top:22px;">
+      <a class="buy-btn" href="https://www.hp.com/us-en/shop/pdp/hp-omnibook-x-flipngai-14-fm0047nr-b88a6ua-aba" target="_blank" rel="noopener">
+        🛒 Buy at HP.com — OmniBook X Flip Ultra 7
+      </a>
+      <div class="buy-btn-sub">Laptop MSRP: $1,199.99 + pen value $79.99 = $1,279.98 total · Current: $854.99 + WA tax = $944.76 · After MS bundle: ~$304.90 · Pen included FREE · Free shipping from HP direct</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Sources: HP.com product listing (14-fm0047nr) · Tom's Hardware review · Tom's Guide review · XDA Developers review · HP datasheet · iFixit · Generated with Claude · May 2026</p>
+  <p style="margin-top:5px;"><a href="index.html">← Back to Full Comparison</a> · <a href="omnibook-ultra5.html">Compare: Ultra 5 version</a></p>
+</footer>
+
+<script>
+const btn=document.getElementById('hamBtn');
+const drawer=document.getElementById('drawer');
+const overlay=document.getElementById('drawerOverlay');
+function openDrawer(){btn.classList.add('open');drawer.classList.add('open');overlay.classList.add('open');btn.setAttribute('aria-expanded','true')}
+function closeDrawer(){btn.classList.remove('open');drawer.classList.remove('open');overlay.classList.remove('open');btn.setAttribute('aria-expanded','false')}
+btn.addEventListener('click',()=>drawer.classList.contains('open')?closeDrawer():openDrawer());
+overlay.addEventListener('click',closeDrawer);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){e.target.style.animationDelay=(i*.04)+'s';e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.07});
+reveals.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
